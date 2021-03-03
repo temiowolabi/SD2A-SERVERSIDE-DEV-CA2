@@ -1,0 +1,224 @@
+.main-header {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 65px;
+  width: 90vw;
+  padding: 0 10vw;
+  color: black;
+  z-index: 1;
+}
+
+.main-header .headerA {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.main-header .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.main-header .nav-links .nav-link .headerA {
+  margin: .2rem;
+  padding: 1rem .5rem;
+}
+
+.main-header .nav-links .nav-link .headerA:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.main-header .menu-icon {
+  position: relative;
+  padding: 26px 10px;
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+}
+
+.main-header .menu-icon__line {
+  display: block;
+  position: relative;
+  background: black;
+  height: 2px;
+  width: 20px;
+  border-radius: 4px;
+  -webkit-transition: background .8s ease;
+  transition: background .8s ease;
+}
+
+.main-header .menu-icon__line::before, .main-header .menu-icon__line::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  background: black;
+  -webkit-transition: background .8s ease;
+  transition: background .8s ease;
+}
+
+.main-header .menu-icon__line::before {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.main-header .menu-icon__line::after {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.main-header .menu-btn {
+  display: none;
+}
+
+.main-header.scrolled {
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: whtie;
+}
+
+.main-header.scrolled .menu-icon__line, .main-header.scrolled .menu-icon__::before, .main-header.scrolled .menu-icon__::after {
+  background: white;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.container {
+  /* margin-top: 0; */
+  width: 80%;
+  margin: 2rem auto;
+}
+
+section {
+  float: left;
+  width: 800PX;
+  padding-bottom: 1.5em;
+}
+
+ul {
+  margin: 0 0 1em 0;
+  padding: 0 0 0 2.5em;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #29407c;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #d08504;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px dashed black;
+  padding: .2em .5em .2em .5em;
+  vertical-align: top;
+  text-align: left;
+}
+
+form {
+  margin: 0;
+}
+
+br {
+  clear: left;
+}
+
+/* the styles for classes */
+.right {
+  text-align: right;
+}
+
+.last_paragraph {
+  margin-bottom: 2em;
+}
+
+.margin_top_increase {
+  margin-top: 1em;
+}
+
+/********************************************************************
+* Additional styles for the record Manager application
+********************************************************************/
+#add_record_form {
+  margin: .5em 0 1em;
+}
+
+#add_record_form label {
+  width: 6em;
+  padding-right: 1em;
+  padding-bottom: .5em;
+  float: left;
+}
+
+#add_record_form input {
+  float: left;
+}
+
+#add_record_form input[text] {
+  width: 15em;
+}
+
+aside {
+  float: left;
+  width: 150px;
+}
+
+h1 {
+  font-size: 150%;
+  margin: 0;
+  padding: .5em 0 .25em;
+}
+
+h2 {
+  font-size: 120%;
+  margin: 0;
+  padding: .25em 0 .5em;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+footer {
+  clear: both;
+  margin-top: 1em;
+  border-top: 2px solid black;
+}
+
+footer p {
+  text-align: right;
+  font-size: 80%;
+  margin: 1em 0;
+}
+/*# sourceMappingURL=custom.css.map */
