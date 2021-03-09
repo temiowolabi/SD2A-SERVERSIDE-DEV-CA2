@@ -19,7 +19,7 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#" class="nav-links">Home</a></li>
+                <li><a href="index.php" class="nav-links">Home</a></li>
                 <li><a href="#" class="nav-links">My Books</a></li>
                 <li><a href="#" class="nav-links">Browse</a></li>
                 <li><a href="#" class="nav-links">Community</a></li>

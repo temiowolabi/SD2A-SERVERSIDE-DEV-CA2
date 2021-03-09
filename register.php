@@ -1,59 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<!-- JQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Slick Carousel -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script src="JS/main.js"></script>
+
+
+<?php
+include('includes/header.php');
+?>
+
+
 <body>
-<form action="process.php" method="post">
-     	<h2>SIGN UP</h2>
-     	<?php if (isset($_GET['error'])) { ?>
-     		<p class="error"><?php echo $_GET['error']; ?></p>
-     	<?php } ?>
+  <div class="auth-content">
 
-          <?php if (isset($_GET['success'])) { ?>
-               <p class="success"><?php echo $_GET['success']; ?></p>
-          <?php } ?>
+    <form action="register.html" method="post">
+      <h2 class="form-title">Register</h2>
 
-          <label>Name</label>
-          <?php if (isset($_GET['name'])) { ?>
-               <input type="text" 
-                      name="name" 
-                      placeholder="Name"
-                      value="<?php echo $_GET['name']; ?>"><br>
-          <?php }else{ ?>
-               <input type="text" 
-                      name="name" 
-                      placeholder="Name"><br>
-          <?php }?>
+      <!-- <div class="msg error">
+        <li>Username required</li>
+      </div> -->
 
-          <label>User Name</label>
-          <?php if (isset($_GET['uname'])) { ?>
-               <input type="text" 
-                      name="uname" 
-                      placeholder="User Name"
-                      value="<?php echo $_GET['uname']; ?>"><br>
-          <?php }else{ ?>
-               <input type="text" 
-                      name="uname" 
-                      placeholder="User Name"><br>
-          <?php }?>
+      <div>
+        <label>Username</label>
+        <input type="text" name="username" class="text-input">
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" name="email" class="text-input">
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" name="password" class="text-input">
+      </div>
+      <div>
+        <label>Password Confirmation</label>
+        <input type="password" name="passwordConf" class="text-input">
+      </div>
+      <div>
+        <button type="submit" name="register-btn" class="btn btn-big">Register</button>
+      </div>
+      <p>Or <a href="login.html">Sign In</a></p>
+    </form>
 
+  </div>
 
-     	<label>Password</label>
-     	<input type="password" 
-                 name="password" 
-                 placeholder="Password"><br>
-
-          <label>Re Password</label>
-          <input type="password" 
-                 name="re_password" 
-                 placeholder="Re_Password"><br>
-
-     	<button type="submit">Sign Up</button>
-          <a href="index.php" class="ca">Already have an account?</a>
-     </form>
 </body>
-</html>
