@@ -22,7 +22,7 @@
                 <li><a href="index.php" class="nav-links">Home</a></li>
                 <li><a href="#" class="nav-links">My Books</a></li>
                 <li><a href="#" class="nav-links">Browse</a></li>
-                <li><a href="#" class="nav-links">Community</a></li>
+                <li><a href="extra.php" class="nav-links">Community</a></li>
                 <li><a href="#" class="nav-links nav-links-btn">Sign Up</a></li>
             </ul>
     </nav>

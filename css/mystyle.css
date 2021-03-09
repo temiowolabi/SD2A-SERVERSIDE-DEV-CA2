@@ -317,6 +317,10 @@ td {
   width: 70%;
 }
 
+.rightpart {
+  width: 30%;
+}
+
 .content .sidebar {
   width: 30%;
   float: left;

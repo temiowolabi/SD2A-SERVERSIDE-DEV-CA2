@@ -15,19 +15,18 @@
 <?php include("path.php") ?>
 <?php include('includes/header.php') ?>
 
-<?php
-require_once('database.php');
-echo '<table>';
-echo '<tr>';
-    echo '<td class="leftpart">';
-        echo '<h3><a href="category.php?id=">Category name</a></h3> Category description goes here';
-    echo '</td>';
-    echo '<td class="rightpart">';                
-            echo '<a href="topic.php?id=">Topic subject</a> at 10-10';
-    echo '</td>';
-echo '</tr>';
-echo '</table>';
-?>
+<?php require_once('database.php');?>
+<table>
+ <tr>
+    <td class="leftpart">
+        <h3><a href="category.php?id=">Category name</a></h3> Category description goes here';
+    </td>
+    <td class="rightpart">             
+            <a href="topic.php?id=">Topic subject</a> at 10-10';
+   </td>
+</tr>
+</table>
+
 
 <?php include('includes/footer.php') ?>
 
