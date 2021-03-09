@@ -290,6 +290,33 @@ a {
   display: none;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table a {
+  color: #000;
+}
+
+table a:hover {
+  color: #373737;
+  text-decoration: none;
+}
+
+th {
+  background-color: #B40E1F;
+  color: #F0F0F0;
+}
+
+td {
+  padding: 5px;
+}
+
+.leftpart {
+  width: 70%;
+}
+
 .content .sidebar {
   width: 30%;
   float: left;
