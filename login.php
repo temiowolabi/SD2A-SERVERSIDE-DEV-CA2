@@ -1,3 +1,6 @@
+<?php include("path.php") ?>
+<?php include('includes/header.php') ?>
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -29,7 +32,7 @@ include('includes/header.php');
       <div>
         <button type="submit" name="login-btn" class="btn btn-big">Login</button>
       </div>
-      <p>Or <a href="register.html">Sign Up</a></p>
+      <p>Or <a href="<?php echo BASE_URL . '/register.php' ?>">Sign Up</a></p>
     </form>
 
   </div>

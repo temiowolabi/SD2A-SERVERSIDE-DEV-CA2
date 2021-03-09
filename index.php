@@ -11,10 +11,8 @@
 <script src="JS/main.js"></script>
 
 
-
-<?php
-include('includes/header.php');
-?>
+<?php include("path.php") ?>
+<?php include('includes/header.php') ?>
 
 <body>
      <!-- Page Wrapper -->
@@ -31,7 +29,7 @@ include('includes/header.php');
     <div class="post">
       <img src="images/pride_prejudice.jpg" alt="" class="slider-image">
       <div class="post-info">
-        <h4><a href="single.html">Pride & Prejudice</a></h4>
+        <h4><a href="<?php echo BASE_URL . '/pride_prejudice.php' ?>">Pride & Prejudice</a></h4>
         <i class="fas fa-user-edit"> Jane AUSTEN</i>
         &nbsp;
         <i class="far fa-calendar"> Mar 8, 2019</i>
@@ -101,9 +99,15 @@ include('includes/header.php');
         <p class="preview-text">
         It is 1939. Nazi Germany. The country is holding its breath. Death has never been busier, and will be busier still.
 
-        By her brother's graveside, Liesel's life is changed when she picks up a single object, partially hidden in the snow. It is The Gravedigger's Handbook, left behind there by accident, and it is her f...
+By her brother's graveside, Liesel's life is changed when she picks up a single object, partially hidden in the snow. It is The Gravedigger's Handbook, left behind there by accident, and it is her first 
+
+<span id="dots">....</span> 
+<span id="more">
+act of book thievery. 
+
+</span>
         </p>
-        <a href="single.html" class="btn read-more">Read More</a>
+        <p  onclick="myFunction()" class="btn read-more">Read More</p>
       </div>
     </div>
 
@@ -115,9 +119,9 @@ include('includes/header.php');
         &nbsp;
         <i class="far fa-calendar"> March 18th 2003</i>
         <p class="preview-text">
-        While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. The elderly curator of the Louvre has been murdered inside the museum, his body covered in baffling symbols. As Langdon and gifted French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover a ...
+        While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. The elderly curator of the Louvre has been murdered inside the museum, 
+        his body covered in baffling symbols. As Langdon and gifted French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover nothing.
         </p>
-        <a href="single.html" class="btn read-more">Read More</a>
       </div>
     </div>
     <div class="post clearfix">
@@ -128,9 +132,8 @@ include('includes/header.php');
         &nbsp;
         <i class="far fa-calendar"> first published 1988</i>
         <p class="preview-text">
-        Paulo Coelho's enchanting novel has inspired a devoted following around the world. This story, dazzling in its powerful simplicity and soul-stirring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried near the Pyramids. Along the way he meets a Gypsy woman, a man who calls h ...
+        Paulo Coelho's enchanting novel has inspired a devoted following around the world. This story, dazzling in its powerful simplicity and soul-stirring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried near the Pyramids. 
         </p>
-        <a href="single.html" class="btn read-more">Read More</a>
       </div>
     </div>
     <div class="post clearfix">
@@ -142,10 +145,7 @@ include('includes/header.php');
         <i class="far fa-calendar"> February 9th 2021</i>
         <p class="preview-text">
         Sixteen-year-old Deka lives in fear and anticipation of the blood ceremony that will determine whether she will become a member of her village. Already different from everyone else because of her unnatural intuition, Deka prays for red blood so she can finally feel like she belongs.
-
-        But on the day of the ceremony, her blood runs gold, the color of impurity--and Deka knows s ...
         </p>
-        <a href="single.html" class="btn read-more">Read More</a>
       </div>
     </div>
 
@@ -185,6 +185,25 @@ include('includes/header.php');
 
 
 <!-- // footer -->
+
+<script>
+    const myFunction=()=>{
+    let dots= document.getElementById("dots");
+    let moreText = document.getElementById("more");
+    let btnText= document.getElementsByClassName("read-more");
+
+    if (dots.style.display === "none") {
+        dots.style.display="inline";
+        btnText.innerHTML="Read More";
+        moreText.style.display="none";
+    } else {
+        dots.style.display="none"      ;
+        btnText.innerHTML="Read Less";
+        moreText.style.display="inline";
+    }
+}
+</script>
+
 </body>
 
 <!-- // footer -->
