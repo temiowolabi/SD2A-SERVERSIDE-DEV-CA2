@@ -2,8 +2,8 @@
     require_once('database.php');
 
     // Get all categories
-    $query = 'SELECT * FROM categories
-              ORDER BY categoryID';
+    $query = 'SELECT * FROM forumcategories 
+              ORDER BY category_id';
     $statement = $db->prepare($query);
     $statement->execute();
     $categories = $statement->fetchAll();
@@ -22,12 +22,12 @@ include('includes/header.php');
         </tr>
         <?php foreach ($categories as $category) : ?>
         <tr>
-            <td><?php echo $category['categoryName']; ?></td>
+            <td><?php echo $category['category_name']; ?></td>
             <td>
                 <form action="delete_category.php" method="post"
                       id="delete_product_form">
                     <input type="hidden" name="category_id"
-                           value="<?php echo $category['categoryID']; ?>">
+                           value="<?php echo $category['category_id']; ?>">
                     <input type="submit" value="Delete">
                 </form>
             </td>
