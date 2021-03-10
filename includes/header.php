@@ -44,6 +44,7 @@
                 <li><a href="#" class="nav-links">Browse</a></li>
                 <li><a href="extra.php" class="nav-links">Community</a></li>
                 <li><a href="login.php" class="nav-links nav-links-btn">Login</a></li>
+                <li><a href="register.php" class="nav-links nav-links-btn">Sign Up</a></li>
                 ';
             }
         ?>

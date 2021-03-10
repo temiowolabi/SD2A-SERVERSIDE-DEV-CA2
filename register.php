@@ -1,40 +1,36 @@
 <?php
-include('includes/header.php');
+    session_start();
+
+    if (isset($_SESSION['username'])) {
+        header('Location: index.php');
+        exit();
+    }
+
+    include_once 'includes/header.php';
+
+    if (isset($_GET['signup'])) {
+        $error = $_GET['signup'];
+        switch ($error) {
+            case 'invalid':
+                echo '<div class="msg-container"><p class="msg error-msg">Sign Up Failed: Make sure you\'re email is valid and password is at least 6 characters.</p></div>';
+                break;
+            case 'empty':
+                echo '<div class="msg-container"><p class="msg error-msg">Sign Up Failed: Please fill in all fields.</p></div>';
+                break;
+            case 'usertaken':
+                echo '<div class="msg-container"><p class="msg error-msg">Sign Up Failed: User name or email is already taken.</p></div>';
+                break;
+            default:
+            echo '<div class="msg-container"><p class="msg error-msg">Error</p></div>';
+        }
+    }
 ?>
-<?php 
-session_start(); 
-include("database.php");
-?>
 
-<div class="auth-content">
-
-    <form action="register.php" method="post">
-      <h2 class="form-title">Register</h2>
-
-      <div>
-        <label>Username</label>
-        <input type="text" name="username" id="username" value="" autocomplete="off" class="text-input" />
-      </div>
-      <div>
-        <label>Email</label>
-        <input type="text" name="email" id="username" email="" autocomplete="off" class="text-input"/>
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="password" name="password" id="password" value="" autocomplete="off" class="text-input"/>
-      </div>
-      <div>
-        <label>Password Confirmation</label>
-        <input type="password" name="passwordConf" id="passwordConf" value="" autocomplete="off" class="text-input"/>
-      </div>
-      <div>
-        <button type="submit" name="register-btn" class="btn btn-big">Register</button>
-      </div>
-      <p>Or <a href="<?php echo BASE_URL . '/login.php' ?>">Sign In</a></p>
+<section class="container signup">
+    <form class="form-signup" action="includes/register.php" method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="text" name="email" placeholder="email" required>
+        <input type="password" name="password" placeholder="password" required>
+        <input type="submit" class="btn btn-submit" value="Submit" name="submit">
     </form>
-
-  </div>
-
-<?php
-include('includes/footer.php');
-?>
+</section>
