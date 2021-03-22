@@ -9,10 +9,24 @@
     include_once 'includes/header.php';
 ?>
 
-<section class="container signup">
-    <form class="form-signup" action="includes/login.php" method="post">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="password" required>
-        <input type="submit" class="btn btn-submit" value="Submit" name="submit">
+<section class="auth-content">
+    <form  action="includes/login.php" method="post">
+
+    <h2 class="form-title">Login</h2>
+
+    <div>
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Username" class="text-input" required>
+</div>
+
+<div>
+        <label>Password</label>
+        <input type="password" name="password" placeholder="password" class="text-input" required>
+</div>
+
+<div>
+
+        <input type="submit" class="btn btn-big" value="Login" name="submit">
+</div>
     </form>
 </section>

@@ -179,7 +179,7 @@
 }
 
 body {
-  background-color: #ccc;
+  background-color: #F2F2F2;
 }
 
 .page-wrapper {
@@ -384,7 +384,7 @@ h1, h2 {
 
 footer {
   clear: both;
-  margin-top: 1em;
+  margin-top: 5em;
   border-top: 2px solid black;
 }
 
@@ -490,8 +490,9 @@ footer p {
 }
 
 .btn {
+  margin-top: 2em;
   padding: 0.5rem 1rem;
-  background: #006669;
+  background: #8C3503;
   color: white;
   border: 1px solid transparent;
   border-radius: 0.25rem;
@@ -507,5 +508,42 @@ footer p {
 .btn:hover {
   color: white !important;
   background: #005255;
+}
+
+.msg-container {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.msg {
+  display: inline-block;
+  padding: 3px 7px;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+}
+
+.error-msg {
+  background-color: red;
+}
+
+.confirm-msg {
+  background-color: green;
+}
+
+.form-box form-group {
+  width: 400px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #777;
+  border-radius: 14px;
+  outline: none;
 }
 /*# sourceMappingURL=mystyle.css.map */

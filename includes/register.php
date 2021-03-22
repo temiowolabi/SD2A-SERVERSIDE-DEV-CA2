@@ -22,7 +22,7 @@
                 exit();
             } else {
                 $sql = "SELECT * FROM users WHERE username=? OR email=?";
-                $query = $pdo->prepare($sql);
+                $query = $db->prepare($sql);
                 $query->execute([$username, $email]);
                 
                 if($query->rowCount()) {
@@ -31,7 +31,7 @@
                 } else {
                     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
                     $sql = "INSERT INTO users(username, email, password) VALUES (:username, :email, :pwd)";
-                    $query = $pdo->prepare($sql);
+                    $query = $db->prepare($sql);
                     $query->execute(['username' => $username, 'email' => $email, 'pwd' => $hashedPwd]);
                     header("Location: ../index.php?signup=success");
                     exit();

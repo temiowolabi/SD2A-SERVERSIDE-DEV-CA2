@@ -25,12 +25,28 @@
         }
     }
 ?>
+<section class="auth-content">
+    <form  action="includes/register.php" method="post">
 
-<section class="container signup">
-    <form class="form-signup" action="includes/register.php" method="post">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="text" name="email" placeholder="email" required>
-        <input type="password" name="password" placeholder="password" required>
-        <input type="submit" class="btn btn-submit" value="Submit" name="submit">
+    <h2 class="form-title">Register</h2>
+
+    <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Username" class="text-input"size="25" onBlur="username_validation();" /><span id="name_err"></span>
+</div>
+
+<div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Email" class="text-input" size="50" onBlur="email_validation();"/><span id="email_err"></span>
+
+<div>
+        <label for="passid">Password</label>
+        <input type="password" name="password" id="passid" placeholder="password" class="text-input" size="12" onBlur="passwd_validation();"/><span id="passwd_err"></span>
+</div>
+
+<div>
+
+        <input type="submit" class="btn btn-big" value="Sign Up" name="submit">
+</div>
     </form>
 </section>

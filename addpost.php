@@ -1,14 +1,22 @@
 <?php
 
+    session_start();
+
+    if (!isset($_SESSION['username'])) {
+        header('Location: index.php');
+        exit();
+    }
+
 // Get the product data
-$post_content = filter_input(INPUT_POST, 'post_content');
-$post_topic = filter_input(INPUT_POST, 'post_topic');
-$post_by = filter_input(INPUT_POST, 'post_by');
+$title = filter_input(INPUT_POST, 'title');
+$body = filter_input(INPUT_POST, 'body');
+$writer = filter_input(INPUT_POST, 'writer');
+$description = filter_input(INPUT_POST, 'description');
+$author = filter_var($_SESSION['username'], FILTER_SANITIZE_STRING);
 
 // Validate inputs
-if ($post_content == null ||
-    $post_topic == null || 
-    $post_by == null ) {
+if ($title == null ||
+    $body == null || $writer == null || $description == null || $author == null ) {
     $error = "Invalid product data. Check all fields and try again.";
     include('error.php');
     exit();
@@ -60,22 +68,23 @@ if ($post_content == null ||
 
     /************************** End Image upload **************************/
     
-    require_once('database.php');
+    require_once('database/database.php');
 
     // Add the product to the database 
     $query = "INSERT INTO posts
-                 (post_content, post_topic, post_by, post_date, image)
+                 (title, body, author, writer, description, image)
               VALUES
-                 (:post_content, :post_topic, :post_by, :post_date, :image)";
+                 (:title, :body, :author, :writer, :description, :image)";
     $statement = $db->prepare($query);
-    $statement->bindValue(':post_content', $post_content);
-    $statement->bindValue(':post_topic', $post_topic);
-    $statement->bindValue(':post_by', $post_by);
-    $statement->bindValue(':post_date', $post_date);
+    $statement->bindValue(':title', $title);
+    $statement->bindValue(':body', $body);
+    $statement->bindValue(':author', $author);
+    $statement->bindValue(':writer', $writer);
+    $statement->bindValue(':description', $description);
     $statement->bindValue(':image', $image);
     $statement->execute();
     $statement->closeCursor();
 
     // Display the Product List page
-    include('extra.php');
+    include('community.php');
 }

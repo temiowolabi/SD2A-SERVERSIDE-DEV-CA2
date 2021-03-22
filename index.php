@@ -13,27 +13,23 @@
 
 <?php include("path.php") ?>
 <?php include('includes/header.php') ?>
-
-
-
-<section>
 <?php
-    if (isset($_GET['signup'])) {
-        $msg = $_GET['signup'];
-        if ($msg == 'success') {
-            echo '<div class="msg-container"><p class="msg confirm-msg">You\'ve successfully signed up.</p></div>';
-        }
-    } else if (isset($_GET['login'])) {
-        $msg = $_GET['login'];
-        if ($msg == 'success') {
-            echo '<div class="msg-container"><p class="msg confirm-msg">You\'ve successfully logged in.</p></div>';
-        } else if ($msg = 'error') {
-            echo '<div class="msg-container"><p class="msg error-msg">Error logging in.</p></div>';
-        }
-    }
-  
-?>
-  </section>
+            if (isset($_GET['signup'])) {
+                $msg = $_GET['signup'];
+                if ($msg == 'success') {
+                    echo '<div class="msg-container"><p class="msg confirm-msg">You\'ve successfully signed up.</p></div>';
+                }
+            } else if (isset($_GET['login'])) {
+                $msg = $_GET['login'];
+                if ($msg == 'success') {
+                    echo '<div class="msg-container"><p class="msg confirm-msg">You\'ve successfully logged in.</p></div>';
+                } else if ($msg = 'error') {
+                    echo '<div class="msg-container"><p class="msg error-msg">Incorrect username or password. Please Try Again.</p></div>';
+                }
+            }
+            
+        ?>
+
 <body>
      <!-- Page Wrapper -->
   <div class="page-wrapper">
@@ -49,7 +45,7 @@
     <div class="post">
       <img src="images/pride_prejudice.jpg" alt="" class="slider-image">
       <div class="post-info">
-        <h4><a href="<?php echo BASE_URL . '/pride_prejudice.php' ?>">Pride & Prejudice</a></h4>
+        <h4><a href="<?php echo ROOT_URL . '/pride_prejudice.php' ?>">Pride & Prejudice</a></h4>
         <i class="fas fa-user-edit"> Jane AUSTEN</i>
         &nbsp;
         <i class="far fa-calendar"> Mar 8, 2019</i>
@@ -107,7 +103,7 @@
 
   <!-- Main Content -->
   <div class="main-content">
-    <h1 class="recent-post-title">Recent Posts</h1>
+    <h1 class="recent-post-title">Recommended Books</h1>
 
     <div class="post clearfix">
       <img src="images/book_thief.jpg" alt="" class="post-image">
@@ -119,11 +115,11 @@
         <p class="preview-text">
         It is 1939. Nazi Germany. The country is holding its breath. Death has never been busier, and will be busier still.
 
-By her brother's graveside, Liesel's life is changed when she picks up a single object, partially hidden in the snow. It is The Gravedigger's Handbook, left behind there by accident, and it is her first 
+By her brother's graveside, Liesel's life is changed when she picks up a single object, partially hidden in the snow. 
 
 <span id="dots">....</span> 
 <span id="more">
-act of book thievery. 
+It is The Gravedigger's Handbook, left behind there by accident, and it is her first act of book thievery. 
 
 </span>
         </p>
@@ -172,30 +168,6 @@ act of book thievery.
   </div>
   <!-- // Main Content -->
 
-  <div class="sidebar">
-
-    <div class="section search">
-      <h2 class="section-title">Search</h2>
-      <form action="index.html" method="post">
-        <input type="text" name="search-term" class="text-input" placeholder="Search...">
-      </form>
-    </div>
-
-
-    <div class="section topics">
-      <h2 class="section-title">Genres</h2>
-      <ul>
-        <li><a href="#">Crime</a></li>
-        <li><a href="#">Fantasy</a></li>
-        <li><a href="#">Fiction</a></li>
-        <li><a href="#">History</a></li>
-        <li><a href="#">Mystery</a></li>
-        <li><a href="#">Romance</a></li>
-        <li><a href="#">Young Adult</a></li>
-      </ul>
-    </div>
-
-  </div>
 
 </div>
 <!-- // Content -->

@@ -36,8 +36,9 @@
   }
 
   .btn {
+    margin-top: 2em;
     padding: 0.5rem 1rem;
-    background: #006669;
+    background: #8C3503;
     color: white;
     border: 1px solid transparent;
     border-radius: 0.25rem;
@@ -55,3 +56,25 @@
     color: white !important;
     background: #005255;
   }
+
+  .msg-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.msg {
+    display: inline-block;
+    padding: 3px 7px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+}
+
+.error-msg {
+    background-color: red;
+}
+
+.confirm-msg {
+    background-color: green;
+}

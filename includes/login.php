@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         exit();
     } else {
         $sql = "SELECT * FROM users WHERE username = :uid OR email = :uid";
-        $query = $pdo->prepare($sql);
+        $query = $db->prepare($sql);
         $query->execute(['uid' => $uid]);
 
         if ($query->rowCount() < 1) {

@@ -2,7 +2,7 @@
 
 session_start();
 
-include_once("database.php");
+include_once("database/database.php");
 
 if(isset($_POST['register']))
 {
