@@ -1,36 +1,20 @@
 
 <?php include("path.php") ?>
 <?php include('includes/header.php') ?>
-<?php
-            if (isset($_GET['signup'])) {
-                $msg = $_GET['signup'];
-                if ($msg == 'success') {
-                    echo '<div class="msg-container"><p class="msg confirm-msg">You\'ve successfully signed up.</p></div>';
-                }
-            } else if (isset($_GET['login'])) {
-                $msg = $_GET['login'];
-                if ($msg == 'success') {
-                    echo '<div class="msg-container"><p class="msg confirm-msg">You\'ve successfully logged in.</p></div>';
-                } else if ($msg = 'error') {
-                    echo '<div class="msg-container"><p class="msg error-msg">Incorrect username or password. Please Try Again.</p></div>';
-                }
-            }
-            
-        ?>
+<?php include(ROOT_PATH . "/controllers/genres.php"); ?>
 
 <body>
-     <!-- Page Wrapper -->
+  <!-- Page Wrapper -->
   <div class="page-wrapper">
 
-<!-- Post Slider -->
-<div class="post-slider">
-  <h1 class="slider-title">Best Books Ever</h1>
-  <i class="fas fa-chevron-left prev"></i>
-  <i class="fas fa-chevron-right next"></i>
+    <!-- Post Slider -->
+    <div class="post-slider">
+    <h1 class="slider-title">Best Books Ever</h1>
+      <i class="fas fa-chevron-left prev"></i>
+      <i class="fas fa-chevron-right next"></i>
 
-  <div class="post-wrapper">
-
-    <div class="post">
+      <div class="post-wrapper">
+      <div class="post">
       <img src="images/pride_prejudice.jpg" alt="" class="slider-image">
       <div class="post-info">
         <h4><a href="<?php echo ROOT_URL . '/pride_prejudice.php' ?>">Pride & Prejudice</a></h4>
@@ -81,16 +65,15 @@
     </div>
 
 
-  </div>
+      </div>
 
-</div>
-<!-- // Post Slider -->
+    </div>
+    <!-- // Post Slider -->
 
-<!-- Content -->
-<div class="content clearfix">
-
-  <!-- Main Content -->
-  <div class="main-content">
+    <!-- Content -->
+    <div class="content clearfix">
+<!-- Main Content -->
+<div class="main-content">
     <h1 class="recent-post-title">Recommended Books</h1>
 
     <div class="post clearfix">
@@ -151,20 +134,36 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
         Sixteen-year-old Deka lives in fear and anticipation of the blood ceremony that will determine whether she will become a member of her village. Already different from everyone else because of her unnatural intuition, Deka prays for red blood so she can finally feel like she belongs.
         </p>
       </div>
+      </div>
+      </div>
+      <!-- // Main Content -->
+
+      <div class="sidebar">
+
+        <div class="section search">
+          <h2 class="section-title">Search</h2>
+          <form action="index.html" method="post">
+            <input type="text" name="search-term" class="text-input" placeholder="Search...">
+          </form>
+        </div>
+
+
+        <div class="section topics">
+          <h2 class="section-title">Topics</h2>
+          <ul>
+          <?php foreach ($genres as $key => $genre): ?>
+              <li><a href="<?php echo ROOT_URL . '/index.php?t_id=' . $genre['id'] . '&name=' . $genre['name'] ?>"><?php echo $genre['name']; ?></a></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+
+      </div>
+
     </div>
+    <!-- // Content -->
 
   </div>
-  <!-- // Main Content -->
-
-
-</div>
-<!-- // Content -->
-
-</div>
-<!-- // Page Wrapper -->
-
-
-<!-- // footer -->
+  <!-- // Page Wrapper -->
 
 <script>
     const myFunction=()=>{

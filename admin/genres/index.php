@@ -56,18 +56,18 @@
                             <th colspan="2">Action</th>
                         </thead>
                         <tbody>
+                        <?php foreach ($genres as $key => $genre): ?>
+
+            
+
                             <tr>
-                                <td>1</td>
-                                <td>Poetry</td>
-                                <td><a href="#" class="edit">edit</a></td>
-                                <td><a href="#" class="delete">delete</a></td>
+                                <td><?php echo $key + 1; ?></td>
+                                <td><?php echo $genre['name']; ?></td>
+                                <td><a href="edit.php?id=<?php echo $genre['id']; ?>" class="edit">edit</a></td>
+                                <td><a href="index.php?del_id=<?php echo $genre['id']; ?>" class="delete">delete</a></td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Life Lessons</td>
-                                <td><a href="#" class="edit">edit</a></td>
-                                <td><a href="#" class="delete">delete</a></td>
-                            </tr>
+
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
 

@@ -26,7 +26,12 @@
 <header>
 <div class="nav-container">
     <nav class="navbar">
+       
+       <a href="../../index.php">
         <h1 id="navbar-logo">Book Kingdom</h1>
+    </a>
+
+       
         <ul class="nav">
                 <li>
                     <a href="#">
