@@ -1,32 +1,61 @@
-<?php
-    session_start();
-
-    if (isset($_SESSION['username'])) {
-        header('Location: index.php');
-        exit();
-    }
-
-    include_once 'includes/header.php';
+<?php include('path.php'); ?>
+<?php include(ROOT_PATH . "/controllers/users.php"); 
+// guestsOnly();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<section class="auth-content">
-    <form  action="includes/login.php" method="post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <h2 class="form-title">Login</h2>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <div>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
+
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <title>Login</title>
+</head>
+
+<body>
+
+<?php include(ROOT_PATH . "/includes/header.php"); ?>
+
+  <div class="auth-content">
+
+    <form action="login.php" method="post">
+      <h2 class="form-title">Login</h2>
+
+      <div>
         <label>Username</label>
-        <input type="text" name="username" placeholder="Username" class="text-input" required>
-</div>
-
-<div>
+        <input type="text" name="username" value="<?php echo $username; ?>" class="text-input">
+      </div>
+      <div>
         <label>Password</label>
-        <input type="password" name="password" placeholder="password" class="text-input" required>
-</div>
-
-<div>
-
-        <input type="submit" class="btn btn-big" value="Login" name="submit">
-</div>
+        <input type="password" name="password" value="<?php echo $password; ?>" class="text-input">
+      </div>
+      <div>
+        <button type="submit" name="login-btn" class="btn btn-big">Login</button>
+      </div>
+      <p>Or <a href="<?php echo BASE_URL . '/register.php' ?>">Sign Up</a></p>
     </form>
-</section>
+
+  </div>
+
+
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Custom Script -->
+  <script src="assets/js/scripts.js"></script>
+
+</body>
+
+</html>
+

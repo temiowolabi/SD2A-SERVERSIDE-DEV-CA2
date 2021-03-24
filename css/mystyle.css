@@ -321,49 +321,25 @@ td {
   width: 30%;
 }
 
-.content .sidebar {
-  width: 30%;
-  float: left;
+.admin-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 66px);
 }
 
-.content .sidebar.single {
-  padding: 0px 10px;
+.admin-wrapper .admin-content {
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
+  height: 100%;
+  padding: 40px 100px 100px;
+  overflow-y: scroll;
 }
 
-.content .sidebar .section {
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.content .sidebar .section .section-title {
-  margin: 10px 0px 10px 0px;
-}
-
-.content .sidebar .section.search {
-  margin-top: 80px;
-}
-
-.content .sidebar .section.topics ul {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-  border-top: 1px solid #e0e0e0;
-}
-
-.content .sidebar .section.topics ul li a {
-  display: block;
-  padding: 15px 0px 15px 0px;
-  border-bottom: 1px solid #e0e0e0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.content .sidebar .section.topics ul li a:hover {
-  padding-left: 10px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.admin-content .page-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 h1 {

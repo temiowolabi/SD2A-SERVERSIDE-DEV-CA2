@@ -1,6 +1,6 @@
 <?php include('../../includes/adminHeader.php') ?>
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/controllers/posts.php"); ?>
+<?php include(ROOT_PATH . "/controllers/topics.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../css/adminCSS.css">
 
-        <title>Admin Section - Manage Posts</title>
+        <title>Admin Section - Update Post</title>
     </head>
 
     <body>
@@ -35,8 +35,8 @@
     <?php include(ROOT_PATH .'/includes/adminSideBar.php') ?>
 
 
-<!-- Admin Content -->
-<div class="admin-content">
+ <!-- Admin Content -->
+ <div class="admin-content">
                 <div class="button-group">
                     <a href="create.php" class="btn btn-big">Add Post</a>
                     <a href="index.php" class="btn btn-big">Manage Posts</a>
@@ -45,41 +45,40 @@
 
                 <div class="content">
 
-                    <h2 class="page-title">Manage Posts</h2>
+                    <h2 class="page-title">Update Posts</h2>
 
-                    <table>
-                        <thead>
-                            <th>SN</th>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th colspan="3">Action</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>This is the first post</td>
-                                <td>Awa</td>
-                                <td><a href="#" class="edit">edit</a></td>
-                                <td><a href="#" class="delete">delete</a></td>
-                                <td><a href="#" class="publish">publish</a></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>This is the second post</td>
-                                <td>Melvine</td>
-                                <td><a href="#" class="edit">edit</a></td>
-                                <td><a href="#" class="delete">delete</a></td>
-                                <td><a href="#" class="publish">publish</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <form action="create.html" method="post">
+                        <div>
+                            <label>Title</label>
+                            <input type="text" name="title" class="text-input">
+                        </div>
+                        <div>
+                            <label>Body</label>
+                            <textarea name="body" id="body"></textarea>
+                        </div>
+                        <div>
+                            <label>Image</label>
+                            <input type="file" name="image" class="text-input">
+                        </div>
+                        <div>
+                            <label>Topic</label>
+                            <select name="topic" class="text-input">
+                                <option value="Poetry">Poetry</option>
+                                <option value="Life Lessons">Life Lessons</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-big">Update Post</button>
+                        </div>
+                    </form>
 
                 </div>
 
             </div>
-<!-- // Admin Content -->
+            <!-- // Admin Content -->
 
-</div>
+        </div>
+        <!-- // Page Wrapper -->
 
 
         <!-- JQuery -->

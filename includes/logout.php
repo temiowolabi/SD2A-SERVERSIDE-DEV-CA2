@@ -1,9 +1,14 @@
-<?php 
+<?php
+include("../path.php");
+session_start();
 
-if (isset($_POST['submit'])) {
-    session_start();
-    session_unset();
-    session_destroy();
-    header("Location: ../index.php");
-    exit();
-}
+unset($_SESSION['id']);
+unset($_SESSION['username']);
+unset($_SESSION['admin']);
+unset($_SESSION['message']);
+unset($_SESSION['type']);
+session_destroy();
+
+header('location: ' . ROOT_URL . '/index.php');
+
+?>

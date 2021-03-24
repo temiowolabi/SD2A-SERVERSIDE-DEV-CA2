@@ -23,7 +23,7 @@
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../css/adminCSS.css">
 
-        <title>Admin Section - Add Post</title>
+        <title>Admin Section - Add User</title>
     </head>
 
     <body>
@@ -38,37 +38,45 @@
  <!-- Admin Content -->
  <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Post</a>
-                    <a href="index.php" class="btn btn-big">Manage Posts</a>
+                    <a href="create.php" class="btn btn-big">Add User</a>
+                    <a href="index.php" class="btn btn-big">Manage Users</a>
                 </div>
 
 
                 <div class="content">
 
-                    <h2 class="page-title">Add Post</h2>
+                    <h2 class="page-title">Add User</h2>
 
                     <form action="create.html" method="post">
                         <div>
-                            <label>Title</label>
-                            <input type="text" name="title" class="text-input">
+                            <label>Username</label>
+                            <input type="text" name="username"
+                                class="text-input">
                         </div>
                         <div>
-                            <label>Body</label>
-                            <textarea name="body" id="body"></textarea>
+                            <label>Email</label>
+                            <input type="email" name="email" class="text-input">
                         </div>
                         <div>
-                            <label>Image</label>
-                            <input type="file" name="image" class="text-input">
+                            <label>Password</label>
+                            <input type="password" name="password"
+                                class="text-input">
                         </div>
                         <div>
-                            <label>Topic</label>
-                            <select name="topic" class="text-input">
-                                <option value="Poetry">Poetry</option>
-                                <option value="Life Lessons">Life Lessons</option>
+                            <label>Password Confirmation</label>
+                            <input type="password" name="passwordConf"
+                                class="text-input">
+                        </div>
+                        <div>
+                            <label>Role</label>
+                            <select name="role" class="text-input">
+                                <option value="Author">Author</option>
+                                <option value="Admin">Admin</option>
                             </select>
                         </div>
+
                         <div>
-                            <button type="submit" class="btn btn-big">Add Post</button>
+                            <button type="submit" class="btn btn-big">Add User</button>
                         </div>
                     </form>
 

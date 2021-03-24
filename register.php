@@ -1,52 +1,69 @@
-<?php
-    session_start();
-
-    if (isset($_SESSION['username'])) {
-        header('Location: index.php');
-        exit();
-    }
-
-    include_once 'includes/header.php';
-
-    if (isset($_GET['signup'])) {
-        $error = $_GET['signup'];
-        switch ($error) {
-            case 'invalid':
-                echo '<div class="msg-container"><p class="msg error-msg">Sign Up Failed: Make sure you\'re email is valid and password is at least 6 characters.</p></div>';
-                break;
-            case 'empty':
-                echo '<div class="msg-container"><p class="msg error-msg">Sign Up Failed: Please fill in all fields.</p></div>';
-                break;
-            case 'usertaken':
-                echo '<div class="msg-container"><p class="msg error-msg">Sign Up Failed: User name or email is already taken.</p></div>';
-                break;
-            default:
-            echo '<div class="msg-container"><p class="msg error-msg">Error</p></div>';
-        }
-    }
+<?php include("path.php"); ?>
+<?php include(ROOT_PATH . "/controllers/users.php");
+// guestsOnly();
 ?>
-<section class="auth-content">
-    <form  action="includes/register.php" method="post">
+<!DOCTYPE html>
+<html lang="en">
 
-    <h2 class="form-title">Register</h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <div>
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" placeholder="Username" class="text-input"size="25" onBlur="username_validation();" /><span id="name_err"></span>
-</div>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-<div>
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="Email" class="text-input" size="50" onBlur="email_validation();"/><span id="email_err"></span>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
 
-<div>
-        <label for="passid">Password</label>
-        <input type="password" name="password" id="passid" placeholder="password" class="text-input" size="12" onBlur="passwd_validation();"/><span id="passwd_err"></span>
-</div>
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="assets/css/style.css">
 
-<div>
+  <title>Register</title>
+</head>
 
-        <input type="submit" class="btn btn-big" value="Sign Up" name="submit">
-</div>
+<body>
+  
+  
+<?php include(ROOT_PATH . "/includes/header.php"); ?>
+
+  <div class="auth-content">
+
+    <form action="register.php" method="post">
+      <h2 class="form-title">Register</h2>
+
+      <div>
+        <label>Username</label>
+        <input type="text" name="username" value="<?php echo $username; ?>" class="text-input" >
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" name="email"  value="<?php echo $email; ?>" class="text-input">
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" name="password"  value="<?php echo $password; ?>" class="text-input">
+      </div>
+      <div>
+        <label>Password Confirmation</label>
+        <input type="password" name="passwordConf"  value="<?php echo $passwordConf; ?>" class="text-input">
+      </div>
+      <div>
+        <button type="submit" name="register-btn" class="btn btn-big">Register</button>
+      </div>
+      <p>Or <a href="<?php echo BASE_URL . '/login.php' ?>">Sign In</a></p>
     </form>
-</section>
+
+  </div>
+
+
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Custom Script -->
+  <script src="assets/js/scripts.js"></script>
+
+</body>
+
+</html>

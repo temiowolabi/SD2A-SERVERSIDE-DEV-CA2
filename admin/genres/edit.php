@@ -1,6 +1,6 @@
 <?php include('../../includes/adminHeader.php') ?>
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/controllers/topics.php"); ?>
+<?php include(ROOT_PATH . "/controllers/genres.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../css/adminCSS.css">
 
-        <title>Admin Section - Add Post</title>
+        <title>Admin Section - Update Genre</title>
     </head>
 
     <body>
@@ -35,40 +35,29 @@
     <?php include(ROOT_PATH .'/includes/adminSideBar.php') ?>
 
 
- <!-- Admin Content -->
- <div class="admin-content">
+    <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Post</a>
-                    <a href="index.php" class="btn btn-big">Manage Posts</a>
+                    <a href="create.php" class="btn btn-big">Add Genre</a>
+                    <a href="index.php" class="btn btn-big">Manage Genre</a>
                 </div>
 
 
                 <div class="content">
 
-                    <h2 class="page-title">Add Post</h2>
+                    <h2 class="page-title">Update Genre</h2>
 
                     <form action="create.html" method="post">
                         <div>
-                            <label>Title</label>
-                            <input type="text" name="title" class="text-input">
+                            <label>Name</label>
+                            <input type="text" name="name" class="text-input">
                         </div>
                         <div>
-                            <label>Body</label>
-                            <textarea name="body" id="body"></textarea>
+                            <label>Description</label>
+                            <textarea name="description" id="body"></textarea>
                         </div>
+
                         <div>
-                            <label>Image</label>
-                            <input type="file" name="image" class="text-input">
-                        </div>
-                        <div>
-                            <label>Topic</label>
-                            <select name="topic" class="text-input">
-                                <option value="Poetry">Poetry</option>
-                                <option value="Life Lessons">Life Lessons</option>
-                            </select>
-                        </div>
-                        <div>
-                            <button type="submit" class="btn btn-big">Add Post</button>
+                            <button type="submit" class="btn btn-big">Update Genre</button>
                         </div>
                     </form>
 
