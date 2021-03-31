@@ -46,11 +46,12 @@
                 <div class="content">
 
                     <h2 class="page-title">Add Genre</h2>
+                    <?php include(ROOT_PATH . "/errors/formErrors.php"); ?>
 
                     <form action="create.php" method="post">
                         <div>
                             <label>Name</label>
-                            <input type="text" name="name" class="text-input">
+                            <input type="text" name="name" value="<?php echo $name ?>" class="text-input">
                         </div>
                         <div>
                             <label>Description</label>
@@ -58,7 +59,7 @@
                         </div>
 
                         <div>
-                            <button type="submit" name="add-genre" class="btn btn-big">Add Genre</button>
+                            <button type="submit" name="add-genre" value="<?php echo $description ?>" class="btn btn-big">Add Genre</button>
                         </div>
                     </form>
 

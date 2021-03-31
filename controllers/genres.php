@@ -1,10 +1,12 @@
 <?php 
 
 include(ROOT_PATH . "/database/db.php");
+include(ROOT_PATH . "/validation/validateGenre.php");
 
 $table = 'genres';
 
 //GLOBAL VARIABLES
+$errors = array();
 $id = '';
 $name ='';
 $description = '';
@@ -14,12 +16,19 @@ $genres = selectAll($table);
 
 if (isset($_POST['add-genre']))
 {
-   unset($_POST['add-genre']);
-   $genre_id = create($table, $_POST);
-   $_SESSION['message'] = 'New Genre Has Been Added';
-   $_SESSION['type'] = 'success';
-   header('location: ' . ROOT_URL . '/admin/genres/index.php');
-   exit();
+   $errors = validateGenre($_POST);
+   if(count($errors) === 0){
+      unset($_POST['add-genre']);
+      $genre_id = create($table, $_POST);
+      $_SESSION['message'] = 'New Genre Has Been Added';
+      $_SESSION['type'] = 'success';
+      header('location: ' . ROOT_URL . '/admin/genres/index.php');
+      exit();
+   }
+   else{
+      $name = $_POST['name'];
+      $description = $_POST['description'];
+   }
 }
 
 //Get request because ID is on URL
@@ -43,7 +52,8 @@ if (isset($_GET['del_id'])){
 
 
 if (isset($_POST['update-genre'])) {
-
+   $errors = validateGenre($_POST);
+   if(count($errors) === 0){
        $id = $_POST['id'];
        unset($_POST['update-genre'], $_POST['id']);
        $genre_id = update($table, $id, $_POST);
@@ -51,7 +61,12 @@ if (isset($_POST['update-genre'])) {
        $_SESSION['type'] = 'success';
        header('location: ' . ROOT_URL . '/admin/genres/index.php');
        exit();
-
+   }
+   else{
+      $id = $_POST['id'];
+      $name = $_POST['name'];
+      $description = $_POST['description'];
+   }
 
 }
 

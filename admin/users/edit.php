@@ -1,6 +1,6 @@
 <?php include('../../includes/adminHeader.php') ?>
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/controllers/topics.php"); ?>
+<?php include(ROOT_PATH . "/controllers/genres.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
