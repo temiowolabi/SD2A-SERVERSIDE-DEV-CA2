@@ -1,6 +1,6 @@
 <?php include('../../includes/adminHeader.php') ?>
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/controllers/topics.php"); ?>
+<?php include(ROOT_PATH . "/controllers/posts.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,28 +47,40 @@
 
                     <h2 class="page-title">Add Post</h2>
 
-                    <form action="create.html" method="post">
+                    <form action="create.php" method="post">
                         <div>
                             <label>Title</label>
                             <input type="text" name="title" class="text-input">
                         </div>
+
                         <div>
                             <label>Body</label>
                             <textarea name="body" id="body"></textarea>
                         </div>
+
+                        <div>
+                        <label>Writer</label>
+                            <input type="text" name="writer" class="text-input">
+                        </div>
+
                         <div>
                             <label>Image</label>
                             <input type="file" name="image" class="text-input">
                         </div>
+                        
                         <div>
-                            <label>Topic</label>
-                            <select name="topic" class="text-input">
-                                <option value="Poetry">Poetry</option>
-                                <option value="Life Lessons">Life Lessons</option>
+                            <label>Genre</label>
+                            <select name="genre_id" class="text-input">
+                            <option value=""></option>
+
+                            <?php foreach ($genres as $key => $genre): ?>
+                            <option value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
+                            <?php endforeach; ?>
+
                             </select>
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-big">Add Post</button>
+                            <button type="submit" name="add-post" class="btn btn-big">Add Post</button>
                         </div>
                     </form>
 

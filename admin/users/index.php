@@ -45,6 +45,7 @@
                 <div class="content">
 
                     <h2 class="page-title">Manage Users</h2>
+                    <?php include(ROOT_PATH . "/includes/messages.php"); ?>
 
                     <table>
                         <thead>
