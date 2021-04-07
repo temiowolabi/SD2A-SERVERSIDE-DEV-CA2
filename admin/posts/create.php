@@ -47,23 +47,25 @@
 
                     <h2 class="page-title">Add Post</h2>
 
+                <?php include(ROOT_PATH . '/errors/formErrors.php') ?>
+
                     <form action="create.php" method="post">
                         <div>
                             <label>Title</label>
-                            <input type="text" name="title" class="text-input">
+                            <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
                         </div>
 
                         <div>
                             <label>Body</label>
-                            <textarea name="body" id="body"></textarea>
+                            <textarea name="body" id="body"><?php echo $body ?></textarea>
                         </div>
-
+<!-- 
                         <div>
                         <label>Writer</label>
                             <input type="text" name="writer" class="text-input">
                         </div>
 
-                        <div>
+                        <div> -->
                             <label>Image</label>
                             <input type="file" name="image" class="text-input">
                         </div>
@@ -74,7 +76,13 @@
                             <option value=""></option>
 
                             <?php foreach ($genres as $key => $genre): ?>
-                            <option value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
+                            <?php if(!empty($genre_id) && $genre_id == $genre['id']): ?>
+                                <option selected value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
+
+                            <?php else: ?>
+                                <option value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
+                            <?php endif; ?>
+
                             <?php endforeach; ?>
 
                             </select>
