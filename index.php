@@ -3,66 +3,34 @@
 <?php include('includes/header.php') ?>
 <?php include(ROOT_PATH . "/controllers/genres.php"); ?>
 
+<?php $posts = getPosts(); ?>
+
 <body>
   <!-- Page Wrapper -->
   <div class="page-wrapper">
 
     <!-- Post Slider -->
     <div class="post-slider">
-    <h1 class="slider-title">Best Books Ever</h1>
+    <h1 class="slider-title">Recent Posts</h1>
       <i class="fas fa-chevron-left prev"></i>
       <i class="fas fa-chevron-right next"></i>
 
       <div class="post-wrapper">
+
+    <?php foreach ($posts as $post): ?>
+
       <div class="post">
-      <img src="images/pride_prejudice.jpg" alt="" class="slider-image">
+      <img src="<?php echo ROOT_URL . 'upload/' . $post['image']; ?>" alt="" class="slider-image">
       <div class="post-info">
-        <h4><a href="<?php echo ROOT_URL . '/pride_prejudice.php' ?>">Pride & Prejudice</a></h4>
-        <i class="fas fa-user-edit"> Jane AUSTEN</i>
+        <h4><a href="post.php"><?php echo $post['title']; ?></a></h4>
+        <i class="fas fa-user-edit"> <?php echo $post['username']; ?></i>
         &nbsp;
-        <i class="far fa-calendar"> Mar 8, 2019</i>
+        <i class="far fa-calendar"><?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
       </div>
     </div>
 
-    <div class="post">
-      <img src="images/love_resolution.jpg" alt="" class="slider-image">
-      <div class="post-info">
-      <h4><a href="single.html">Love Is a Revolution</a></h4>
-        <i class="fas fa-user-edit"> Renée WATSON</i>
-        &nbsp;
-        <i class="far fa-calendar"> February 2nd 2021</i>
-      </div>
-    </div>
+    <?php endforeach; ?>
 
-    <div class="post">
-      <img src="images/memoryMan.jfif" alt="" class="slider-image">
-      <div class="post-info">
-      <h4><a href="single.html">Memory Man</a></h4>
-        <i class="fas fa-user-edit"> David BALDACCI</i>
-        &nbsp;
-        <i class="far fa-calendar"> April 21st 2015</i>
-      </div>
-    </div>
-
-    <div class="post">
-      <img src="images/childrenOfChicago.jpg" alt="" class="slider-image">
-      <div class="post-info">
-      <h4><a href="single.html">Children Of Chicago</a></h4>
-        <i class="fas fa-user-edit"> Cynthia PELAYO</i>
-        &nbsp;
-        <i class="far fa-calendar"> February 9th 2021</i>
-      </div>
-    </div>
-
-    <div class="post">
-      <img src="images/queenOfNothin.jpg" alt="" class="slider-image">
-      <div class="post-info">
-      <h4><a href="single.html">The Queen of Nothing</a></h4>
-        <i class="fas fa-user-edit"> Holly BLACK</i>
-        &nbsp;
-        <i class="far fa-calendar"> November 19th 2019</i>
-      </div>
-    </div>
 
 
       </div>
@@ -138,7 +106,8 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
       </div>
       <!-- // Main Content -->
 
-      <div class="sidebar">
+
+      <k class="sidebar">
 
         <div class="section search">
           <h2 class="section-title">Search</h2>
@@ -157,10 +126,20 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
           </ul>
         </div>
 
-      </div>
+      </k>
 
     </div>
     <!-- // Content -->
+    <div class="row">
+            <div class="col-md-10 col-lg-12">
+                <div class="clearfix">
+                    <a href="community.php">
+                        <button class="btn btn-primary float-right" type="button">Older Posts&nbsp;⇒</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
   </div>
   <!-- // Page Wrapper -->

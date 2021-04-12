@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 require('database.php');
 
 
@@ -124,6 +123,16 @@ function delete($table, $condition)
     }
 
     return $stmt->rowCount();
+}
+
+function getPosts()
+{
+    global $conn;
+
+    $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id";
+    $stmt = executeQuery($sql);
+    $records = $stmt->fetchAll();
+    return $records;
 }
 ?>
 

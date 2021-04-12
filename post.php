@@ -39,10 +39,10 @@
             <div class="main-content-wrapper">
             <div class="main-content single">
             <h1 class="post-title"><?php echo $post['title']; ?></h1>
-            <img src="image_uploads/<?php echo $post['image']; ?>"  />
+            <img src="upload/<?php echo $post['image']; ?>"  />
 
             <div class="post-content">
-                <p><?php echo $post['description']; ?></p>
+                <p><?php echo $post['body']; ?></p>
 </div>
                 <?php 
                     if(isset($_SESSION) && !empty($_SESSION['username'])) 

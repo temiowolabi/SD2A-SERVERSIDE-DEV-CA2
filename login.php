@@ -43,7 +43,7 @@
       <div>
         <button type="submit" name="login-btn" class="btn btn-big">Login</button>
       </div>
-      <p>Or <a href="<?php echo BASE_URL . '/register.php' ?>">Sign Up</a></p>
+      <p>Or <a href="<?php echo ROOT_URL . '/register.php' ?>">Sign Up</a></p>
     </form>
 
   </div>

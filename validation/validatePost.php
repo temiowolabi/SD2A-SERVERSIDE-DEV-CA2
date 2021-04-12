@@ -11,9 +11,6 @@
         if(empty($_POST['body'])){
             array_push($errors, 'A Body Is Required!');
         }
-        if(empty($_POST['image'])){
-            array_push($errors, 'Dont be boring, add an image!');
-        }
         if(empty($_POST['genre_id'])){
             array_push($errors, 'Please Select A Genre!');
         }

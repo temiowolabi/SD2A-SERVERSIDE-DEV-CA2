@@ -1,4 +1,9 @@
-
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <!-- the head section -->
 <head>
 <title>My PHP CRUD App</title>
@@ -33,16 +38,27 @@
 
        
         <ul class="nav">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user"></i>
-                        Temi Owolabi
-                        <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-                    </a>
-                    <ul>
-                        <li><a href="#" class="logout">Logout</a></li>
-                    </ul>
-                </li>
+        <?php
+            if (isset($_SESSION['username'])) {
+                echo '
+                    <li><a href="index.php" class="nav-links">Home</a></li>
+                    <li><a href="community.php" class="nav-links">Community</a></li>
+                    <li>
+                        <form action="includes/logout.php" method="POST">
+                            <button class="nav-links nav-links-btn" type="submit" name="submit">Logout</button>
+                        </form>
+                    </li>
+                ';
+            } else {
+                echo '
+                <li><a href="index.php" class="nav-links">Home</a></li>
+                <li><a href="community.php" class="nav-links">Community</a></li>
+                <li><a href="login.php" class="nav-links nav-links-btn">Login</a></li>
+                <li><a href="register.php" class="nav-links nav-links-btn">Sign Up</a></li>
+                ';
+            }
+        ?>
+             
             </ul>
     </nav>
 </div>
