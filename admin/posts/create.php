@@ -1,7 +1,7 @@
-<?php include('../../includes/adminHeader.php') ?>
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/controllers/posts.php"); ?>
-
+<?php include(ROOT_PATH . "/controllers/posts.php"); 
+// adminOnly();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +20,6 @@
         <link href="https://fonts.googleapis.com/css?family=Candal|Lora"
             rel="stylesheet">
 
-        <!-- Admin Styling -->
         <link rel="stylesheet" href="../../css/adminCSS.css">
 
         <title>Admin Section - Add Post</title>
@@ -28,15 +27,16 @@
 
     <body>
         
-    <div class="admin-wrapper">
+    <?php include(ROOT_PATH . "/includes/adminHeader.php"); ?>
 
-    <!-- Sidebar -->
+        <!-- Admin Page Wrapper -->
+        <div class="admin-wrapper">
 
-    <?php include(ROOT_PATH .'/includes/adminSideBar.php') ?>
+        <?php include(ROOT_PATH . "/includes/adminSidebar.php"); ?>
 
 
- <!-- Admin Content -->
- <div class="admin-content">
+            <!-- Admin Content -->
+            <div class="admin-content">
                 <div class="button-group">
                     <a href="create.php" class="btn btn-big">Add Post</a>
                     <a href="index.php" class="btn btn-big">Manage Posts</a>
@@ -47,46 +47,37 @@
 
                     <h2 class="page-title">Add Post</h2>
 
-                <?php include(ROOT_PATH . '/errors/formErrors.php') ?>
+                    <?php include(ROOT_PATH . '/errors/formErrors.php'); ?>
 
-                    <form action="create.php" method="post">
+                    <form action="create.php" method="post" enctype="multipart/form-data">
                         <div>
                             <label>Title</label>
                             <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
                         </div>
-
                         <div>
                             <label>Body</label>
                             <textarea name="body" id="body"><?php echo $body ?></textarea>
                         </div>
-<!-- 
                         <div>
-                        <label>Writer</label>
-                            <input type="text" name="writer" class="text-input">
-                        </div>
-
-                        <div> -->
                             <label>Image</label>
                             <input type="file" name="image" class="text-input">
                         </div>
-                        
                         <div>
                             <label>Genre</label>
                             <select name="genre_id" class="text-input">
-                            <option value=""></option>
+                                <option value=""></option>
+                                <?php foreach ($genres as $key => $genre): ?>
+                                    <?php if (!empty($genre_id) && $genre_id == $genre['id'] ): ?>
+                                        <option selected value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
+                                    <?php else: ?>
+                                        <option value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
+                                    <?php endif; ?>
 
-                            <?php foreach ($genres as $key => $genre): ?>
-                            <?php if(!empty($genre_id) && $genre_id == $genre['id']): ?>
-                                <option selected value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
-
-                            <?php else: ?>
-                                <option value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
-                            <?php endif; ?>
-
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
 
                             </select>
                         </div>
+
                         <div>
                             <button type="submit" name="add-post" class="btn btn-big">Add Post</button>
                         </div>
@@ -99,6 +90,7 @@
 
         </div>
         <!-- // Page Wrapper -->
+
 
 
         <!-- JQuery -->

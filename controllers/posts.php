@@ -49,6 +49,8 @@ if (isset($_POST['add-post'])) {
         } else {
             array_push($errors, "Failed to upload image");
         }
+    } else {
+       array_push($errors, "Don't be boring, add an image!");
     }
     if (count($errors) == 0) {
         unset($_POST['add-post']);
@@ -84,7 +86,7 @@ if (isset($_POST['update-post'])) {
             array_push($errors, "Failed to upload image");
         }
     } else {
-       array_push($errors, "Post image required");
+       array_push($errors, "Don't be boring, add an image!");
     }
 
     if (count($errors) == 0) {

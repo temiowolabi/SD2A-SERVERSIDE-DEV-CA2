@@ -10,32 +10,20 @@
 
 <script src="JS/main.js"></script>
 
-<?php include("path.php") ?>
-<?php include(ROOT_PATH . "/database/db.php"); ?>
 <?php 
+include("path.php");
+include(ROOT_PATH . "/controllers/genres.php");
+
 $posts = getPosts(); 
-$postsTitle = 'Recent Posts';
-
 ?>
 
-
-<?php
-
-    require('database/database.php');
-
-    $sql = 'SELECT * FROM posts';
-    $query = $db->prepare($sql);
-    $query->execute();
-    $posts = $query->fetchAll();
-
-?>
 
 <?php include('includes/header.php')?>
 
 <div class="page-wrapper">
     <div class="content clearfix">
     <div class="main-content">
-        <h1 class="recent-post-title"><?php echo $postsTitle ?></h1>
+        <h1 class="recent-post-title">Recent Posts</h1>
 
         <?php foreach ($posts as $post): ?>
           <div class="post clearfix">

@@ -2,8 +2,6 @@
 include("path.php");
 include(ROOT_PATH . "/controllers/genres.php");
 
-$posts = array();
-$postsTitle = 'Recent Posts';
 $posts = getPosts(); 
 ?>
 <!DOCTYPE html>
@@ -35,7 +33,7 @@ $posts = getPosts();
 
         <?php foreach ($posts as $post): ?>
           <div class="post">
-            <img src="<?php echo BASE_URL . './upload/' . $post['image']; ?>" alt="" class="slider-image">
+            <img src="<?php echo ROOT_URL . './upload/' . $post['image']; ?>" alt="" class="slider-image">
             <div class="post-info">
               <h4><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h4>
               <i class="far fa-user"> <?php echo $post['username']; ?></i>

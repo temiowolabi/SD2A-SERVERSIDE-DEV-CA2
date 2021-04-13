@@ -40,7 +40,7 @@
                         <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
                     </a>
                     <ul>
-                        <li><a href="#" class="logout">Logout</a></li>
+                    <button class="nav-links nav-links-btn" type="submit" name="submit">Logout</button>
                     </ul>
                 </li>
             </ul>
