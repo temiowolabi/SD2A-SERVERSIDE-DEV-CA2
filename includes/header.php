@@ -1,9 +1,3 @@
-<?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
-?>
 
 <!-- the head section -->
 <head>

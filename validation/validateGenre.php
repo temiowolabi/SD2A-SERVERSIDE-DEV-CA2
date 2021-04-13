@@ -11,10 +11,15 @@ function validateGenre($genre)
     $existingGenre = selectOne('genres', ['name' => $genre['name']]);
     if ($existingGenre) {
 
+        if (isset($post['update-genre']) && $existingGenre['id'] != $post['id']) {
             array_push($errors, 'Genre already exists');
+        }
+
+        if (isset($post['add-genre'])) {
+            array_push($errors, 'Genre already exists');
+        }
     }
 
     return $errors;
 }
-
-
+?>

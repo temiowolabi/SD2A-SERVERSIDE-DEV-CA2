@@ -1,68 +1,49 @@
+<?php 
+include("path.php");
+include(ROOT_PATH . "/controllers/genres.php");
 
-<?php include("path.php") ?>
-<?php include('includes/header.php') ?>
-<?php include(ROOT_PATH . "/controllers/genres.php"); ?>
+$posts = array();
+$postsTitle = 'Recent Posts';
+$posts = getPosts(); 
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <title>Home</title>
+</head>
 
 <body>
+
+  <?php include(ROOT_PATH . "/includes/header.php"); ?>
+  <?php include(ROOT_PATH . "/includes/messages.php"); ?>
+
+
+
   <!-- Page Wrapper -->
   <div class="page-wrapper">
 
     <!-- Post Slider -->
     <div class="post-slider">
-    <h1 class="slider-title">Best Books Ever</h1>
+      <h1 class="slider-title">Recent Posts</h1>
       <i class="fas fa-chevron-left prev"></i>
       <i class="fas fa-chevron-right next"></i>
 
       <div class="post-wrapper">
-      <div class="post">
-      <img src="images/pride_prejudice.jpg" alt="" class="slider-image">
-      <div class="post-info">
-        <h4><a href="<?php echo ROOT_URL . '/pride_prejudice.php' ?>">Pride & Prejudice</a></h4>
-        <i class="fas fa-user-edit"> Jane AUSTEN</i>
-        &nbsp;
-        <i class="far fa-calendar"> Mar 8, 2019</i>
-      </div>
-    </div>
 
-    <div class="post">
-      <img src="images/love_resolution.jpg" alt="" class="slider-image">
-      <div class="post-info">
-      <h4><a href="single.html">Love Is a Revolution</a></h4>
-        <i class="fas fa-user-edit"> Renée WATSON</i>
-        &nbsp;
-        <i class="far fa-calendar"> February 2nd 2021</i>
-      </div>
-    </div>
-
-    <div class="post">
-      <img src="images/memoryMan.jfif" alt="" class="slider-image">
-      <div class="post-info">
-      <h4><a href="single.html">Memory Man</a></h4>
-        <i class="fas fa-user-edit"> David BALDACCI</i>
-        &nbsp;
-        <i class="far fa-calendar"> April 21st 2015</i>
-      </div>
-    </div>
-
-    <div class="post">
-      <img src="images/childrenOfChicago.jpg" alt="" class="slider-image">
-      <div class="post-info">
-      <h4><a href="single.html">Children Of Chicago</a></h4>
-        <i class="fas fa-user-edit"> Cynthia PELAYO</i>
-        &nbsp;
-        <i class="far fa-calendar"> February 9th 2021</i>
-      </div>
-    </div>
-
-    <div class="post">
-      <img src="images/queenOfNothin.jpg" alt="" class="slider-image">
-      <div class="post-info">
-      <h4><a href="single.html">The Queen of Nothing</a></h4>
-        <i class="fas fa-user-edit"> Holly BLACK</i>
-        &nbsp;
-        <i class="far fa-calendar"> November 19th 2019</i>
-      </div>
-    </div>
+        <?php foreach ($posts as $post): ?>
+          <div class="post">
+            <img src="<?php echo BASE_URL . './upload/' . $post['image']; ?>" alt="" class="slider-image">
+            <div class="post-info">
+              <h4><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h4>
+              <i class="far fa-user"> <?php echo $post['username']; ?></i>
+              &nbsp;
+              <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
+            </div>
+          </div>
+        <?php endforeach; ?>
 
 
       </div>
@@ -149,7 +130,7 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
 
 
         <div class="section topics">
-          <h2 class="section-title">Topics</h2>
+          <h2 class="section-title">Genres</h2>
           <ul>
           <?php foreach ($genres as $key => $genre): ?>
               <li><a href="<?php echo ROOT_URL . '/index.php?t_id=' . $genre['id'] . '&name=' . $genre['name'] ?>"><?php echo $genre['name']; ?></a></li>
@@ -182,6 +163,16 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
     }
 }
 </script>
+
+
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Slick Carousel -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <!-- Custom Script -->
+  <script src="JS/script.js"></script>
 
 </body>
 

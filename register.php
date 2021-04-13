@@ -1,24 +1,11 @@
 <?php include("path.php"); ?>
 <?php include(ROOT_PATH . "/controllers/users.php");
-// guestsOnly();
+guestsOnly();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
-
-  <!-- Custom Styling -->
-  <link rel="stylesheet" href="assets/css/style.css">
 
   <title>Register</title>
 </head>
@@ -32,6 +19,8 @@
 
     <form action="register.php" method="post">
       <h2 class="form-title">Register</h2>
+
+      <?php include(ROOT_PATH . "/errors/formErrors.php"); ?>
 
       <div>
         <label>Username</label>
@@ -52,7 +41,7 @@
       <div>
         <button type="submit" name="register-btn" class="btn btn-big">Register</button>
       </div>
-      <p>Or <a href="<?php echo BASE_URL . '/login.php' ?>">Sign In</a></p>
+      <p>Or <a href="<?php echo ROOT_URL . '/login.php' ?>">Sign In</a></p>
     </form>
 
   </div>
@@ -62,7 +51,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- Custom Script -->
-  <script src="assets/js/scripts.js"></script>
+  <script src="JS/script.js"></script>
 
 </body>
 

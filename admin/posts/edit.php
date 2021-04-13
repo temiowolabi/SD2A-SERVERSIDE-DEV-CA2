@@ -1,7 +1,7 @@
-<?php include('../../includes/adminHeader.php') ?>
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/controllers/topics.php"); ?>
-
+<?php include(ROOT_PATH . "/controllers/posts.php");
+// adminOnly();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,20 +23,21 @@
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../css/adminCSS.css">
 
-        <title>Admin Section - Update Post</title>
+        <title>Admin Section - Edit Post</title>
     </head>
 
     <body>
         
-    <div class="admin-wrapper">
+    <?php include(ROOT_PATH . "/includes/adminHeader.php"); ?>
 
-    <!-- Sidebar -->
+        <!-- Admin Page Wrapper -->
+        <div class="admin-wrapper">
 
-    <?php include(ROOT_PATH .'/includes/adminSideBar.php') ?>
+        <?php include(ROOT_PATH . "/includes/adminSidebar.php"); ?>
 
 
- <!-- Admin Content -->
- <div class="admin-content">
+            <!-- Admin Content -->
+            <div class="admin-content">
                 <div class="button-group">
                     <a href="create.php" class="btn btn-big">Add Post</a>
                     <a href="index.php" class="btn btn-big">Manage Posts</a>
@@ -45,30 +46,41 @@
 
                 <div class="content">
 
-                    <h2 class="page-title">Update Posts</h2>
+                    <h2 class="page-title">Edit Post</h2>
 
-                    <form action="create.html" method="post">
+                    <?php include(ROOT_PATH . "/errors/formErrors.php"); ?>
+
+                    <form action="edit.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?php echo $id ?>">
                         <div>
                             <label>Title</label>
-                            <input type="text" name="title" class="text-input">
+                            <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
                         </div>
                         <div>
                             <label>Body</label>
-                            <textarea name="body" id="body"></textarea>
+                            <textarea name="body" id="body"><?php echo $body ?></textarea>
                         </div>
                         <div>
                             <label>Image</label>
                             <input type="file" name="image" class="text-input">
                         </div>
                         <div>
-                            <label>Topic</label>
-                            <select name="topic" class="text-input">
-                                <option value="Poetry">Poetry</option>
-                                <option value="Life Lessons">Life Lessons</option>
+                            <label>Genre</label>
+                            <select name="genre_id" class="text-input">
+                                <option value=""></option>
+                                <?php foreach ($genres as $key => $genre): ?>
+                                    <?php if (!empty($genre_id) && $genre_id == $genre['id'] ): ?>
+                                        <option selected value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
+                                    <?php else: ?>
+                                        <option value="<?php echo $genre['id'] ?>"><?php echo $genre['name'] ?></option>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+
                             </select>
                         </div>
+    
                         <div>
-                            <button type="submit" class="btn btn-big">Update Post</button>
+                            <button type="submit" name="update-post" class="btn btn-big">Update Post</button>
                         </div>
                     </form>
 
@@ -79,6 +91,7 @@
 
         </div>
         <!-- // Page Wrapper -->
+
 
 
         <!-- JQuery -->

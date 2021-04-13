@@ -1,6 +1,8 @@
 <?php 
 
 include(ROOT_PATH . "/database/db.php");
+include(ROOT_PATH . "/errors/middleware.php");
+include(ROOT_PATH . "/validation/validateUser.php");
 
 $table = 'users';
 
@@ -24,9 +26,9 @@ function loginUser($user)
     $_SESSION['type'] = 'success';
 
     if ($_SESSION['admin']) {
-        header('location: ' . BASE_URL . '/admin/dashboard.php'); 
+        header('location: ' . ROOT_URL . '/admin/dashboard.php'); 
     } else {
-        header('location: ' . BASE_URL . '/index.php');
+        header('location: ' . ROOT_URL . '/index.php');
     }
     exit();
 }
@@ -43,7 +45,7 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
             $user_id = create($table, $_POST);
             $_SESSION['message'] = 'Admin user created';
             $_SESSION['type'] = 'success';
-            header('location: ' . BASE_URL . '/admin/users/index.php'); 
+            header('location: ' . ROOT_URL . '/admin/users/index.php'); 
             exit();
         } else {
             $_POST['admin'] = 0;
@@ -73,7 +75,7 @@ if (isset($_POST['update-user'])) {
         $count = update($table, $id, $_POST);
         $_SESSION['message'] = 'Admin user created';
         $_SESSION['type'] = 'success';
-        header('location: ' . BASE_URL . '/admin/users/index.php'); 
+        header('location: ' . ROOT_URL . '/admin/users/index.php'); 
         exit();
         
     } else {
@@ -118,7 +120,7 @@ if (isset($_GET['delete_id'])) {
     $count = delete($table, $_GET['delete_id']);
     $_SESSION['message'] = 'Admin user deleted';
     $_SESSION['type'] = 'success';
-    header('location: ' . BASE_URL . '/admin/users/index.php'); 
+    header('location: ' . ROOT_URL . '/admin/users/index.php'); 
     exit();
 }
 
