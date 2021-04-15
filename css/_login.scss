@@ -1,80 +1,69 @@
 .auth-content {
-    width: 30%;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-  }
-  
-  .auth-content .form-title {
-    text-align: center;
-  }
-  
-  .auth-content form div {
-    margin-bottom: 10px;
-  }
-  
-  .auth-content form p {
-    text-align: center;
-  }
-  
-  .auth-content form p a {
-    text-decoration: underline;
-  }
-  
-  .text-input {
-    padding: 0.7rem 1rem;
-    display: block;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #e0e0e0;
-    outline: none;
-    color: #444;
-    line-height: 1.5rem;
-    font-size: 1.2em;
-    font-family: "Lora", serif;
-  }
-
-  .btn {
-    margin-top: 2em;
-    padding: 0.5rem 1rem;
-    background: #8C3503;
-    color: white;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    font-size: 1.08em;
-    font-family: "Lora", serif;
-  }
-  
-
-  .btn-big {
-    padding: 0.7rem 1.3rem;
-    line-height: 1.3rem;
-  }
-
-  .btn:hover {
-    color: white !important;
-    background: #005255;
-  }
-
-  .msg-container {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
+	width: 30%;
+	margin: 50px auto;
+	padding: 20px;
+	background: white;
+	border-radius: 5px;
+	.form-title {
+		text-align: center;
+	}
+	form {
+		div {
+			margin-bottom: 10px;
+		}
+		p {
+			text-align: center;
+			a {
+				text-decoration: underline;
+			}
+		}
+	}
 }
-
+.text-input {
+	padding: 0.7rem 1rem;
+	display: block;
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #e0e0e0;
+	outline: none;
+	color: #444;
+	line-height: 1.5rem;
+	font-size: 1.2em;
+	font-family: "Lora", serif;
+}
+.btn {
+	margin-top: 2em;
+	padding: 0.5rem 1rem;
+	background: #8C3503;
+	color: white;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+	font-size: 1.08em;
+	font-family: "Lora", serif;
+	&:hover {
+		color: white !important;
+		background: #005255;
+	}
+}
+.btn-big {
+	padding: 0.7rem 1.3rem;
+	line-height: 1.3rem;
+}
+.msg-container {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+}
 .msg {
-    display: inline-block;
-    padding: 3px 7px;
-    text-align: center;
-    color: white;
-    font-weight: 700;
+	display: inline-block;
+	padding: 3px 7px;
+	text-align: center;
+	color: white;
+	font-weight: 700;
 }
-
 .error-msg {
-    background-color: red;
+	background-color: red;
 }
-
 .confirm-msg {
-    background-color: green;
+	background-color: green;
 }

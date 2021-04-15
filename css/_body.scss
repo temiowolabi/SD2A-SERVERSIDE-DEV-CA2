@@ -1,241 +1,159 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Comfortaa', cursive;
+/*content*/
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Comfortaa', cursive;
 }
-
 body {
-    background-color: #F2F2F2;
+	background-color: #F2F2F2;
 }
-
 .page-wrapper {
-    min-height: 100%;
-  }
-  
-  .page-wrapper a:hover {
-    color: #006669;
-  }
-
-
-  /*content*/
-  .content {
-    width: 90%;
-    margin: 30px auto 30px;
-  }
-  
-  .content .main-content {
-    width: 70%;
-    float: left;
-  }
-  
-  .content .main-content.single {
-    background: white;
-    padding: 20px 50px;
-    font-size: 1.1em;
-    border-radius: 5px;
-  }
-  
-  .content .main-content.single .post-title {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .content .main-content .post {
-    width: 95%;
-    height: 270px;
-    margin: 20px auto;
-    border-radius: 5px;
-    background: white;
-    position: relative;
-  }
-  
-  .content .popular .post {
-    border-top: 1px solid #e0e0e0;
-    margin-top: 10px;
-    padding-top: 10px;
-  }
-  
-  .content .popular .post img {
-    height: 60px;
-    width: 75px;
-    float: left;
-    margin-right: 10px;
-  }
-  
-  .content .main-content .post .post-preview i {
-    color: #757575;
-    font-size: .8em;
-  }
-  
-  .content .main-content .post .preview-text {
-    line-height: 1.5em;
-    font-size: 1.03em;
-    color: #444;
-  }
-
-  .content .main-content .post .read-more {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    border: 1px solid #006669;
-    background: transparent;
-    border-radius: 0px;
-    color: #006669 !important;
-  }
-
-  .content .main-content .post .read-more:hover {
-    background: #006669;
-    color: white !important;
-    transition: .25s;
-  }
-  
-  .content .main-content .post .post-image {
-    width: 40%;
-    height: 100%;
-    float: left;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-  
-  .content .main-content .post .post-preview {
-    width: 60%;
-    padding: 10px;
-    float: right;
-  }
-  
-  .content .main-content .recent-post-title {
-    margin: 20px;
-  }
-
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  #more{
-    display: none;
+	min-height: 100%;
+	a {
+		&:hover {
+			color: #006669;
+		}
+	}
 }
-
+.content {
+	width: 90%;
+	margin: 30px auto 30px;
+	.main-content {
+		width: 70%;
+		float: left;
+		.post {
+			width: 95%;
+			height: 270px;
+			margin: 20px auto;
+			border-radius: 5px;
+			background: white;
+			position: relative;
+			.post-preview {
+				i {
+					color: #757575;
+					font-size: .8em;
+				}
+				width: 60%;
+				padding: 10px;
+				float: right;
+			}
+			.preview-text {
+				line-height: 1.5em;
+				font-size: 1.03em;
+				color: #444;
+			}
+			.read-more {
+				position: absolute;
+				bottom: 10px;
+				right: 10px;
+				border: 1px solid #006669;
+				background: transparent;
+				border-radius: 0px;
+				color: #006669 !important;
+				&:hover {
+					background: #006669;
+					color: white !important;
+					transition: .25s;
+				}
+			}
+			.post-image {
+				width: 40%;
+				height: 100%;
+				float: left;
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+			}
+		}
+		.recent-post-title {
+			margin: 20px;
+		}
+	}
+	.main-content.single {
+		background: white;
+		padding: 20px 50px;
+		font-size: 1.1em;
+		border-radius: 5px;
+		.post-title {
+			text-align: center;
+			margin-bottom: 40px;
+		}
+	}
+	.popular {
+		.post {
+			border-top: 1px solid #e0e0e0;
+			margin-top: 10px;
+			padding-top: 10px;
+			img {
+				height: 60px;
+				width: 75px;
+				float: left;
+				margin-right: 10px;
+			}
+		}
+	}
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+#more {
+	display: none;
+}
 table {
-  border-collapse: collapse;
-  width: 100%;
+	border-collapse: collapse;
+	width: 100%;
+	a {
+		color: #000;
+		&:hover {
+			color: #373737;
+			text-decoration: none;
+		}
+	}
 }
-
-table a {
-  color: #000;
-}
-
-table a:hover {
-  color:#373737;
-  text-decoration: none;
-}
-
 th {
-  background-color: #B40E1F;
-  color: #F0F0F0;
+	background-color: #B40E1F;
+	color: #F0F0F0;
 }
-
 td {
-  padding: 5px;
+	padding: 5px;
 }
-
 .leftpart {
-  width: 70%;
+	width: 70%;
 }
-
 .rightpart {
-  width: 30%;
+	width: 30%;
 }
-
 .admin-wrapper {
 	display: flex;
 	height: calc(100% - 66px);
+	.admin-content {
+		flex: 8;
+		height: 100%;
+		padding: 40px 100px 100px;
+		overflow-y: scroll;
+	}
 }
-
-.admin-wrapper .admin-content {
-  flex: 8;
-  height: 100%;
-  padding: 40px 100px 100px;
-  overflow-y: scroll;
+.admin-content {
+	.page-title {
+		text-align: center;
+		margin-bottom: 1.5rem;
+	}
 }
-.admin-content .page-title {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-
 .msg {
-  width: 100%;
-  margin: 5px auto;
-  padding: 8px;
-  border-radius: 5px;
-  list-style: none;
+	width: 100%;
+	margin: 5px auto;
+	padding: 8px;
+	border-radius: 5px;
+	list-style: none;
 }
-
 .success {
-  color: #3a6e3a;
-  border: 1px solid #3a6e3a;
-  background: #bcf5bc;
+	color: #3a6e3a;
+	border: 1px solid #3a6e3a;
+	background: #bcf5bc;
 }
-
 .error {
-  color: #884b4b;
-  border: 1px solid #884b4b;
-  background: #f5bcbc;
+	color: #884b4b;
+	border: 1px solid #884b4b;
+	background: #f5bcbc;
 }
-
-
-
-// section {
-//     float: left;
-//     width: 800PX;
-//     padding-bottom: 1.5em;
-// }
-
-// table {
-//     border: 1px solid black;
-//     border-collapse: collapse;
-// }
-// td, th {
-//     border: 1px dashed black;
-//     padding: .2em .5em .2em .5em;
-//     vertical-align: top;
-//     text-align: left;
-// }
-// form {
-//     margin: 0;
-// }
-// br {
-//     clear: left;
-// }
-// /* the styles for classes */
-// .right {
-//     text-align: right;
-// }
-// .last_paragraph {
-// 	margin-bottom: 2em;	
-// }
-// .margin_top_increase {
-// 	margin-top: 1em;	
-// }
-
-// /********************************************************************
-// * Additional styles for the record Manager application
-// ********************************************************************/
-// #add_record_form {
-//     margin: .5em 0 1em;
-// }
-// #add_record_form label {
-//     width: 6em;
-//     padding-right: 1em;
-//     padding-bottom: .5em;
-//     float: left;
-// }
-// #add_record_form input {
-//     float: left;
-// }
-// #add_record_form input[text] {
-//     width: 15em;
-// }

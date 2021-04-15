@@ -61,7 +61,7 @@
           <span class="circle one"></span>
           <span class="circle two"></span>
 
-          <form action="index.html" autocomplete="off">
+          <form method="POST" name="contactform" action="contact-form-handler.php" autocomplete="off"> 
             <h3 class="title">Contact us</h3>
             <div class="input-container">
               <input type="text" name="name" class="input" />
@@ -89,6 +89,6 @@
       </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="JS/app.js"></script>
   </body>
 </html>
