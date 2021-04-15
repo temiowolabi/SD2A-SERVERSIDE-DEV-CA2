@@ -56,14 +56,16 @@
                             <label>Title</label>
                             <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
                         </div>
+
                         <div>
                             <label>Body</label>
                             <textarea name="body" id="body"><?php echo $body ?></textarea>
                         </div>
-                        <div>
+
                             <label>Image</label>
                             <input type="file" name="image" class="text-input">
                         </div>
+                        
                         <div>
                             <label>Genre</label>
                             <select name="genre_id" class="text-input">

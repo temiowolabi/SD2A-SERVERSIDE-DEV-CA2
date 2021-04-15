@@ -64,7 +64,7 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
 
 if (isset($_POST['update-user'])) {
     adminOnly();
-    $errors = validateUser($_POST);
+    $errors = validateUserUpdate($_POST);
 
     if (count($errors) === 0) {
         $id = $_POST['id'];
@@ -82,8 +82,8 @@ if (isset($_POST['update-user'])) {
         $username = $_POST['username'];
         $admin = isset($_POST['admin']) ? 1 : 0;
         $email = $_POST['email'];
-        $password = $_POST['password'];
-        $passwordConf = $_POST['passwordConf'];
+        // $password = $_POST['password'];
+        // $passwordConf = $_POST['passwordConf'];
     }
 }
 

@@ -20,6 +20,8 @@ if(isset($_POST['search-term'])){
   <title>Home</title>
 </head>
 
+<?php $posts = getPosts(); ?>
+
 <body>
 
   <?php include(ROOT_PATH . "/includes/header.php"); ?>
@@ -124,7 +126,8 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
       </div>
       <!-- // Main Content -->
 
-      <div class="sidebar">
+
+      <k class="sidebar">
 
         <!-- <div class="section search">
           <h2 class="section-title">Search</h2>
@@ -143,10 +146,20 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
           </ul>
         </div>
 
-      </div>
+      </k>
 
     </div>
     <!-- // Content -->
+    <div class="row">
+            <div class="col-md-10 col-lg-12">
+                <div class="clearfix">
+                    <a href="community.php">
+                        <button class="btn btn-primary float-right" type="button">Older Posts&nbsp;⇒</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
   </div>
   <!-- // Page Wrapper -->
