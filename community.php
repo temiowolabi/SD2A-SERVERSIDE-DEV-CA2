@@ -13,6 +13,7 @@
 <?php 
 include("path.php");
 include(ROOT_PATH . "/controllers/genres.php");
+usersOnly();
 
 $posts = getPosts(); 
 ?>
@@ -45,10 +46,11 @@ $posts = getPosts();
 
       </div>
         </div>
+        <a href="<?php echo ROOT_URL?>addPost.php" class="btn btn-submit">Add New Post</a>
         </div> 
             
  
-                            <a href="<?php echo ROOT_URL?>admin/posts/create.php" class="btn btn-submit">Add New Post</a>
+                           
             
 
 <?php include('includes/footer.php')?>

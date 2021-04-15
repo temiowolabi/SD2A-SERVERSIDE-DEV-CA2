@@ -1,6 +1,6 @@
-<?php include("../../path.php"); ?>
+<?php include("path.php"); ?>
 <?php include(ROOT_PATH . "/controllers/posts.php"); 
-adminOnly();
+// adminOnly();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ adminOnly();
         <link href="https://fonts.googleapis.com/css?family=Candal|Lora"
             rel="stylesheet">
 
-        <link rel="stylesheet" href="../../css/adminCSS.css">
+        <link rel="stylesheet" href="css/adminCSS.css">
 
         <title>Admin Section - Add Post</title>
     </head>
@@ -32,14 +32,11 @@ adminOnly();
         <!-- Admin Page Wrapper -->
         <div class="admin-wrapper">
 
-        <?php include(ROOT_PATH . "/includes/adminSidebar.php"); ?>
-
 
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Post</a>
-                    <a href="index.php" class="btn btn-big">Manage Posts</a>
+                    <a href="community.php" class="btn btn-big">See Other Posts</a>
                 </div>
 
 
@@ -49,7 +46,7 @@ adminOnly();
 
                     <?php include(ROOT_PATH . '/errors/formErrors.php'); ?>
 
-                    <form action="create.php" method="post" enctype="multipart/form-data">
+                    <form action="addPost.php" method="post" enctype="multipart/form-data">
                         <div>
                             <label>Title</label>
                             <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
@@ -100,7 +97,7 @@ adminOnly();
         <script
             src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
         <!-- Custom Script -->
-        <script src="../../JS/script.js"></script>
+        <script src="JS/script.js"></script>
 
     </body>
 

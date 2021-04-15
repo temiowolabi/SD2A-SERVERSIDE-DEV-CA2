@@ -342,6 +342,26 @@ td {
   margin-bottom: 1.5rem;
 }
 
+.msg {
+  width: 100%;
+  margin: 5px auto;
+  padding: 8px;
+  border-radius: 5px;
+  list-style: none;
+}
+
+.success {
+  color: #3a6e3a;
+  border: 1px solid #3a6e3a;
+  background: #bcf5bc;
+}
+
+.error {
+  color: #884b4b;
+  border: 1px solid #884b4b;
+  background: #f5bcbc;
+}
+
 .content .sidebar {
   width: 30%;
   float: left;
@@ -383,6 +403,14 @@ td {
 
 .content .sidebar .section.topics ul li a:hover {
   padding-left: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.section.topics2 ul li a {
+  display: block;
+  padding: 15px 0px 15px 0px;
+  border-bottom: 1px solid #e0e0e0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }

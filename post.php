@@ -2,13 +2,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-<!-- JQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Slick Carousel -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-<script src="JS/main.js"></script>
 <?php include("path.php") ?>
 
 <?php
@@ -33,6 +26,7 @@
     $post = $query->fetch();
 ?>
 
+<body>
 <?php include('includes/header.php')?>
 <div class="page-wrapper">
             <div class="content clearfix">
@@ -42,27 +36,24 @@
             <img src="upload/<?php echo $post['image']; ?>"  />
 
             <div class="post-content">
-                <p><?php echo $post['body']; ?></p>
+                <p><?php echo html_entity_decode ($post['body']); ?></p>
 </div>
-                <?php 
-                    if(isset($_SESSION) && !empty($_SESSION['username'])) 
-                    {
-                        if ($post['author'] == $_SESSION['username']) {
-                            echo '
-                                <form action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '" class="button-right" method="POST">
-                                <input type="hidden" name="delete_id" value="' . $post['id'] . '">
-                                <input type="submit" value="Delete" name="delete" class="btn btn-danger">
-                                </form>
-                                <a href="' . ROOT_URL . 'editpost.php?id=' . $post['id'] . '" class="btn btn-primary">Edit Post</a>
-                            ';
-                        }
-                    } 
-                ?>
-                <a href="community.php" class="btn btn-primary">Back</a>
+
+                
                 </div>
                 </div>
             </div>
+            <a href="community.php" class="btn btn-primary">Back</a>
                 </div> 
+
+
+                
+<!-- JQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="JS/main.js"></script>
+
+</body>
 
                 
 <?php include('includes/footer.php')?>

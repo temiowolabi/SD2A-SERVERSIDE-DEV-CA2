@@ -1,6 +1,8 @@
 <?php include('../../includes/adminHeader.php') ?>
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/controllers/genres.php"); ?>
+<?php include(ROOT_PATH . "/controllers/genres.php"); 
+adminOnly();
+?>
 
 <!DOCTYPE html>
 <html lang="en">

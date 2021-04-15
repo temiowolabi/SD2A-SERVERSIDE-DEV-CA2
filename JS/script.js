@@ -29,4 +29,3 @@ ClassicEditor.create(document.querySelector("#body"), {
   }).catch(error => {
     console.log(error);
   });
-  

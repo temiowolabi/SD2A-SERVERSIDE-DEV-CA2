@@ -130,8 +130,19 @@ function getPosts()
 {
     global $conn;
 
-    $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id";
+    $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id ORDER BY p.created_at DESC";
     $stmt = executeQuery($sql);
+    $records = $stmt->fetchAll();
+    return $records;
+}
+
+function searchPosts($term)
+{
+    $match = '%' . $term . '%';
+    global $conn;
+
+    $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id AND p.title LIKE ? OR p.body LIKE ?";
+    $stmt = executeQuery($sql, ['title' => $match, 'body' => $match]);
     $records = $stmt->fetchAll();
     return $records;
 }

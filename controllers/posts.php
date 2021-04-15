@@ -35,7 +35,7 @@ if (isset($_GET['delete_id'])) {
 }
 
 if (isset($_POST['add-post'])) {
-    // adminOnly();
+    adminOnly();
     $errors = validatePost($_POST);
 
     if (!empty($_FILES['image']['name'])) {

@@ -2,7 +2,14 @@
 include("path.php");
 include(ROOT_PATH . "/controllers/genres.php");
 
-$posts = getPosts(); 
+$posts = array();
+
+if(isset($_POST['search-term'])){
+  $posts = searchPosts($_POST['search-term']);
+}else{
+  $posts = getPosts(); 
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,12 +126,12 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
 
       <div class="sidebar">
 
-        <div class="section search">
+        <!-- <div class="section search">
           <h2 class="section-title">Search</h2>
-          <form action="index.html" method="post">
+          <form action="index.php" method="post">
             <input type="text" name="search-term" class="text-input" placeholder="Search...">
           </form>
-        </div>
+        </div> -->
 
 
         <div class="section topics">

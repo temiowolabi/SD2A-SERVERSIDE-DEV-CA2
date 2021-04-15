@@ -39,6 +39,7 @@
                 echo '
                     <li><a href="index.php" class="nav-links">Home</a></li>
                     <li><a href="community.php" class="nav-links">Community</a></li>
+                    <li><a href="contact.php" class="nav-links">Contact</a></li>
                     <li>
                         <form action="logout.php" method="POST">
                             <button class="nav-links nav-links-btn" type="submit" name="submit">Logout</button>
@@ -49,6 +50,7 @@
                 echo '
                 <li><a href="index.php" class="nav-links">Home</a></li>
                 <li><a href="community.php" class="nav-links">Community</a></li>
+                <li><a href="contact.php" class="nav-links">Contact</a></li>
                 <li><a href="login.php" class="nav-links nav-links-btn">Login</a></li>
                 <li><a href="register.php" class="nav-links nav-links-btn">Sign Up</a></li>
                 ';
