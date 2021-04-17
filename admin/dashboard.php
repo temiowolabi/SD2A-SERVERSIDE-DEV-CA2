@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 <?php include("../path.php"); ?>
 <?php include(ROOT_PATH . "/controllers/posts.php"); 
 $posts = getPosts(); 
 adminOnly();
 ?>
-=======
-<?php include('../includes/adminHeader.php') ?>
-<?php include("../path.php"); ?>
-<?php include(ROOT_PATH . "/controllers/posts.php"); ?>
-
->>>>>>> origin/Contact
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,16 +57,6 @@ adminOnly();
 
         </div>
         <!-- // Page Wrapper -->
-
-
-        <!-- JQuery -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- Ckeditor -->
-        <script
-            src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
-        <!-- Custom Script -->
-        <script src="../JS/scripts.js"></script>
 
     </body>
 

@@ -14,6 +14,7 @@
 include("path.php");
 include(ROOT_PATH . "/controllers/genres.php");
 usersOnly();
+adminOnly();
 
 $posts = getPosts(); 
 ?>
