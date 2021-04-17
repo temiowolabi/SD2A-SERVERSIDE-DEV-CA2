@@ -1,4 +1,9 @@
-<?php include('includes/header.php')?>
+<?php
+include("path.php");
+include(ROOT_PATH . "/controllers/genres.php");
+include('includes/header.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

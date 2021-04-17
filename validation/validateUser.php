@@ -7,6 +7,10 @@ function validateUser($user)
     if (empty($user['username'])) {
         array_push($errors, 'Username is required');
     }
+    else if(strlen($user['username']) < 6)
+    {
+        array_push($errors, 'Username needs to have a minimum of 6 characters.');
+    }
 
     if (empty($user['email'])) {
         array_push($errors, 'Email is required');
@@ -14,6 +18,10 @@ function validateUser($user)
 
     if (empty($user['password'])) {
         array_push($errors, 'Password is required');
+    }
+    else if(strlen($user['password']) < 6)
+    {
+        array_push($errors, 'Password needs to have a minimum of 6 characters.');
     }
 
     if ($user['passwordConf'] !== $user['password']) {
