@@ -20,14 +20,14 @@
         <link href="https://fonts.googleapis.com/css?family=Candal|Lora"
             rel="stylesheet">
 
-        <link rel="stylesheet" href="css/adminCSS.css">
+        <link rel="stylesheet" href="css/mystyle.css">
 
         <title>Admin Section - Add Post</title>
     </head>
 
     <body>
         
-    <?php include(ROOT_PATH . "/includes/adminHeader.php"); ?>
+    <?php include(ROOT_PATH . "/includes/header.php"); ?>
 
         <!-- Admin Page Wrapper -->
         <div class="admin-wrapper">

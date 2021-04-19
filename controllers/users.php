@@ -54,11 +54,11 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
             loginUser($user);
         }
     } else {
-        $username = $_POST['username'];
+        $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
         $admin = isset($_POST['admin']) ? 1 : 0;
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $passwordConf = $_POST['passwordConf'];
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $password = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $passwordConf = filter_var($_POST['passwordConf'], FILTER_SANITIZE_SPECIAL_CHARS);
     }
 }
 

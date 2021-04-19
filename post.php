@@ -42,14 +42,32 @@
                 
                 </div>
                 </div>
+                
             </div>
+            
             <a href="community.php" class="btn btn-primary">Back</a>
                 </div> 
+
+                <!-- (B) GIVE THIS PAGE A HIDDEN POST ID -->
+<input type="hidden" id="pid" value="999"/>
+ 
+ <!-- (C) COMMENTS WILL LOAD HERE -->
+ <h1>COMMENTS</h1>
+ <div id="cwrap"></div>
+  
+ <!-- (D) ADD NEW COMMENT -->
+ <form id="cadd" onsubmit="return comments.add(this)">
+   <h1>Leave a reply</h1>
+   <input type="text" id="cname" placeholder="Name" required/>
+   <textarea id="cmsg" placeholder="Message" required></textarea>
+   <input type="submit" value="Post Comment"/>
+ </form>
 
 
                 
 <!-- JQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="JS/comments.js"></script>
 
 <script src="JS/main.js"></script>
 

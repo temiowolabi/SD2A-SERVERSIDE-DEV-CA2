@@ -14,7 +14,7 @@
 include("path.php");
 include(ROOT_PATH . "/controllers/genres.php");
 usersOnly();
-adminOnly();
+// adminOnly();
 
 $posts = getPosts(); 
 ?>
@@ -42,8 +42,6 @@ $posts = getPosts();
             </div>
           </div>    
         <?php endforeach; ?>
-        
-
 
       </div>
         </div>

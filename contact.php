@@ -19,26 +19,25 @@ include('includes/header.php');
   <body>
     <div class="container1">
       <span class="big-circle"></span>
-      <img src="img/shape.png" class="square" alt="" />
+      <img src="images/shape.png" class="square" alt="" />
       <div class="form">
         <div class="contact-info">
           <h3 class="title">Let's get in touch</h3>
           <p class="text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-            dolorum adipisci recusandae praesentium dicta!
+            Feel free to contact us with any questions you may have!
           </p>
 
           <div class="info">
             <div class="information">
-              <img src="img/location.png" class="icon" alt="" />
+              <img src="images/location.png" class="icon" alt="" />
               <p>Marshes Upper, Dundalk, Co. Louth, A91 K584</p>
             </div>
             <div class="information">
-              <img src="img/email.png" class="icon" alt="" />
+              <img src="images/email.png" class="icon" alt="" />
               <p>D00227197@student.dkit.ie</p>
             </div>
             <div class="information">
-              <img src="img/phone.png" class="icon" alt="" />
+              <img src="images/phone.png" class="icon" alt="" />
               <p>123-456-789</p>
             </div>
           </div>
