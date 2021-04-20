@@ -21,6 +21,7 @@ function executeQuery($sql, $data = [])
     return $stmt;
 }
 
+
 function selectAll($table, $conditions = [], $order_by = [])
 {
     global $db;
@@ -128,10 +129,28 @@ function delete($table, $condition)
 
 function getPosts()
 {
-    global $conn;
+    global $db;
+    $published = 1;
 
-    $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id ORDER BY p.created_at DESC";
-    $stmt = executeQuery($sql);
+    $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=? ORDER BY p.created_at DESC";
+    $stmt = executeQuery($sql, array($published));
+    $records = $stmt->fetchAll();
+    return $records;
+}
+
+function getPostsByGenreId($genre_id)
+{
+    global $db;
+    $published = 1;
+    // $genre_id =  'genre_id';
+
+    $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=? AND genre_id = ? ORDER BY p.created_at DESC";
+   
+    // $stmt = executeQuery($sql, array($published, ['genre_id' => $genre_id]));
+    ['genre_id' =>  $genre_id];
+
+    $stmt = executeQuery($sql, array($published, $genre_id));
+ 
     $records = $stmt->fetchAll();
     return $records;
 }
@@ -139,7 +158,7 @@ function getPosts()
 function searchPosts($term)
 {
     $match = '%' . $term . '%';
-    global $conn;
+    global $db;
 
     $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id AND p.title LIKE ? OR p.body LIKE ?";
     $stmt = executeQuery($sql, ['title' => $match, 'body' => $match]);

@@ -67,6 +67,13 @@ adminOnly();
                                 <td>Temi</td>
                                 <td><a href="edit.php?id=<?php echo $post['id']; ?>" class="edit">edit</a></td>
                                 <td><a href="edit.php?delete_id=<?php echo $post['id']; ?>" class="delete">delete</a></td>
+
+                                
+                                <?php if ($post['published']): ?>
+                                        <td><a href="edit.php?published=0&p_id=<?php echo $post['id'] ?>" class="unpublish">unpublish</a></td>
+                                    <?php else: ?>
+                                        <td><a href="edit.php?published=1&p_id=<?php echo $post['id'] ?>" class="publish">publish</a></td>
+                                    <?php endif; ?>
                             </tr>
                         <?php endforeach; ?>  
                         </tbody>

@@ -31,7 +31,13 @@
   font-family: 'Comfortaa', cursive;
 }
 
-html,
+html {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background: #f6f6f6;
+}
+
 body {
   height: 100%;
   padding: 0px;
@@ -65,11 +71,31 @@ body {
   margin: 30px auto 30px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+h1 {
+  color: #5c5b5b;
+  margin: 5px;
+}
+
+h2 {
+  color: #5c5b5b;
+  margin: 5px;
+}
+
+h3 {
+  color: #5c5b5b;
+  margin: 5px;
+}
+
+h4 {
+  color: #5c5b5b;
+  margin: 5px;
+}
+
+h5 {
+  color: #5c5b5b;
+  margin: 5px;
+}
+
 h6 {
   color: #5c5b5b;
   margin: 5px;
@@ -95,14 +121,14 @@ a {
   font-size: 1.08em;
 }
 
-.btn-big {
-  padding: .7rem 1.3rem;
-  line-height: 1.3rem;
-}
-
 .btn:hover {
   color: white !important;
   background: #005255;
+}
+
+.btn-big {
+  padding: .7rem 1.3rem;
+  line-height: 1.3rem;
 }
 
 .text-input {
@@ -123,7 +149,12 @@ table {
   font-size: 1.1rem;
 }
 
-th,
+th {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #d3d3d3;
+}
+
 td {
   padding: 15px;
   text-align: left;
@@ -134,16 +165,22 @@ td {
   color: green;
 }
 
+.edit:hover {
+  text-decoration: underline;
+}
+
 .delete {
   color: red;
+}
+
+.delete:hover {
+  text-decoration: underline;
 }
 
 .publish {
   color: blue;
 }
 
-.edit:hover,
-.delete:hover,
 .publish:hover {
   text-decoration: underline;
 }
@@ -172,16 +209,9 @@ form div {
   background: #f5bcbc;
 }
 
-:root {
-  --brownOne: #D99559;
-  --brownTwo: #8C4126;
-  --brownThree: #D9B596;
-  --white: #F2F2F2;
-}
-
 .nav-container {
   width: 100%;
-  background-color: var(--brownTwo);
+  background-color: #F2A7CA;
 }
 
 .navbar {
@@ -203,9 +233,6 @@ form div {
   -ms-grid-column-align: start;
       justify-self: start;
   margin-left: 20px;
-}
-
-#navbar-logo {
   cursor: pointer;
 }
 
@@ -280,10 +307,6 @@ header ul li ul {
   z-index: 88888;
 }
 
-header ul li:hover ul {
-  display: block;
-}
-
 header ul li ul li {
   width: 100%;
 }
@@ -294,12 +317,16 @@ header ul li ul li a {
   color: #444;
 }
 
+header ul li ul li a:hover {
+  background: #d5d6d6;
+}
+
 header ul li ul li a.logout {
   color: red;
 }
 
-header ul li ul li a:hover {
-  background: #d5d6d6;
+header ul li:hover ul {
+  display: block;
 }
 
 header ul li a {

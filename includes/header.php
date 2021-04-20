@@ -40,11 +40,7 @@
                     <li><a href="index.php" class="nav-links">Home</a></li>
                     <li><a href="community.php" class="nav-links">Community</a></li>
                     <li><a href="contact.php" class="nav-links">Contact</a></li>
-                    <li>
-                        <form action="logout.php" method="POST">
-                            <button class="nav-links nav-links-btn" type="submit" name="submit">Logout</button>
-                        </form>
-                    </li>
+                    <li><a href="logout.php" class="nav-links nav-links-btn">Logout</a></li>
                 ';
             } else {
                 echo '

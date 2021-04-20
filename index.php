@@ -4,11 +4,19 @@ include(ROOT_PATH . "/controllers/genres.php");
 
 $posts = array();
 
-if(isset($_POST['search-term'])){
-  $posts = searchPosts($_POST['search-term']);
-}else{
-  $posts = getPosts(); 
+if(isset($_GET['t_id'])){
+  $posts = getPostsByGenreId($_GET['t_id']);
+  $postsTitle = "Posts under '" . $_GET['name'] . "'"; 
 }
+else{
+  $posts = getPosts();
+}
+
+// if(isset($_POST['search-term'])){
+//   $posts = searchPosts($_POST['search-term']);
+// }else{
+//   $posts = getPosts(); 
+// }
 
 ?>
 <!DOCTYPE html>
@@ -19,8 +27,6 @@ if(isset($_POST['search-term'])){
 
   <title>Home</title>
 </head>
-
-<?php $posts = getPosts(); ?>
 
 <body>
 
@@ -42,9 +48,9 @@ if(isset($_POST['search-term'])){
 
         <?php foreach ($posts as $post): ?>
           <div class="post">
-            <img src="<?php echo ROOT_URL . './upload/' . $post['image']; ?>" alt="" class="slider-image">
+          <a href="post.php?id=<?php echo $post['id']; ?>"><img src="<?php echo ROOT_URL . './upload/' . $post['image']; ?>" alt="" class="slider-image"></a>
             <div class="post-info">
-              <h4><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h4>
+              <h4><a href="post.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h4>
               <i class="far fa-user"> <?php echo $post['username']; ?></i>
               &nbsp;
               <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
@@ -127,7 +133,7 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
       <!-- // Main Content -->
 
 
-      <k class="sidebar">
+      <div class="sidebar">
 
         <!-- <div class="section search">
           <h2 class="section-title">Search</h2>
@@ -146,7 +152,7 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
           </ul>
         </div>
 
-      </k>
+      </div>
 
     </div>
     <!-- // Content -->

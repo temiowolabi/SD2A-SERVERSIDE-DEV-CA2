@@ -22,32 +22,43 @@ $posts = getPosts();
 
 <?php include('includes/header.php')?>
 
-<div class="page-wrapper">
-    <div class="content clearfix">
-    <div class="main-content">
-        <h1 class="recent-post-title">Recent Posts</h1>
 
-        <?php foreach ($posts as $post): ?>
-          <div class="post clearfix">
-            <img src="<?php echo ROOT_URL . './upload/' . $post['image']; ?>" alt="" class="post-image">
-            <div class="post-preview">
-              <h2><a href="post.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h2>
-              <i class="far fa-user"> <?php echo $post['username']; ?></i>
-              &nbsp;
-              <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
-              <p class="preview-text">
-                <?php echo html_entity_decode(substr($post['body'], 0, 150) . '...'); ?>
-              </p>
-              <a href="post.php?id=<?php echo $post['id']; ?>" class="btn read-more">Read More</a>
-            </div>
-          </div>    
-        <?php endforeach; ?>
 
+<section class="latest-news-area" id="latest">
+  <div class="container5">
+    <div class="col-sm-12">
+      <div class="section-title">
+        <div class="section_subtitle">Blog</div>
+        <h2>Recent <strong>Blogs</strong></h2>
       </div>
+    </div>
+  </div>
+  <?php foreach ($posts as $post): ?>
+  <br><br>
+  <div class="row">
+    <div class="news-active">
+      <div class="col-md-4">
+        <div class="latest-news-wrap">
+          <div class="news-img">
+          <img src="<?php echo ROOT_URL . './upload/' . $post['image']; ?>" alt="" class="img-responsive">
+          <div class="deat">
+            <span>
+            <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
+            </span>
+          </div>
+          </div>
+          <div class="news-content">
+          <i class="far fa-user"> Posted By: <?php echo $post['username']; ?></i>
+          <p><?php echo html_entity_decode(substr($post['body'], 0, 300) . '...'); ?></p>
+        <br>
+        <a href="post.php?id=<?php echo $post['id']; ?>">Read More</a> 
         </div>
-        <a href="<?php echo ROOT_URL?>addPost.php" class="btn btn-submit">Add New Post</a>
-        </div> 
-            
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php endforeach; ?>
+</section>
  
                            
             

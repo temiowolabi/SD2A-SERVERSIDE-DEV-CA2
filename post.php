@@ -2,8 +2,10 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-<?php include("path.php") ?>
-
+<?php include("path.php");
+include(ROOT_PATH . "/controllers/posts.php");
+usersOnly();
+ ?>
 <?php
 
     require('database/database.php');
@@ -48,26 +50,13 @@
             <a href="community.php" class="btn btn-primary">Back</a>
                 </div> 
 
-                <!-- (B) GIVE THIS PAGE A HIDDEN POST ID -->
-<input type="hidden" id="pid" value="999"/>
- 
- <!-- (C) COMMENTS WILL LOAD HERE -->
- <h1>COMMENTS</h1>
- <div id="cwrap"></div>
-  
- <!-- (D) ADD NEW COMMENT -->
- <form id="cadd" onsubmit="return comments.add(this)">
-   <h1>Leave a reply</h1>
-   <input type="text" id="cname" placeholder="Name" required/>
-   <textarea id="cmsg" placeholder="Message" required></textarea>
-   <input type="submit" value="Post Comment"/>
- </form>
 
+
+    
 
                 
 <!-- JQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="JS/comments.js"></script>
 
 <script src="JS/main.js"></script>
 
