@@ -16,6 +16,10 @@ function validateUser($user)
         array_push($errors, 'Email is required');
     }
 
+    if (!filter_var($user, FILTER_VALIDATE_EMAIL)) {
+        array_push($errors, 'Invalid email format.');
+      }
+
     if (empty($user['password'])) {
         array_push($errors, 'Password is required');
     }

@@ -20,6 +20,10 @@ $email_address))
 {
     $errors .= "\n Error: Invalid email address";
 }
+else if(!preg_match("/^[0-9][0-9]{0,9}$/", $phone_number))
+{
+	$errors .= "\n Error: Invalid phone number";
+}
 
 if( empty($errors))
 {
@@ -44,9 +48,11 @@ if( empty($errors))
 
 <body>
 <!-- This page is displayed only if there is some error -->
+<div class="msg error">
 <?php
 echo nl2br($errors);
 ?>
+</div>
 
 
 </body>

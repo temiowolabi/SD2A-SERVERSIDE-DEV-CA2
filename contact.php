@@ -45,16 +45,16 @@ include('includes/header.php');
           <div class="social-media">
             <p>Connect with us :</p>
             <div class="social-icons">
-              <a href="#">
+              <a href="https://www.facebook.com/DkIT.ie/">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="#">
+              <a href="https://twitter.com/DkIT_ie?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/dkit_ie/">
                 <i class="fab fa-instagram"></i>
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/school/dundalk-institute-of-technology/">
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
@@ -69,7 +69,7 @@ include('includes/header.php');
             <h3 class="title">Contact us</h3>
             <div class="input-container">
               <input type="text" name="name" class="input" />
-              <label for="">Username</label>
+              <label for="">Name</label>
               <span>Username</span>
             </div>
             <div class="input-container">

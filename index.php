@@ -3,6 +3,7 @@ include("path.php");
 include(ROOT_PATH . "/controllers/genres.php");
 
 $posts = array();
+$postsTitle = "Recent Posts";
 
 if(isset($_GET['t_id'])){
   $posts = getPostsByGenreId($_GET['t_id']);
@@ -40,7 +41,7 @@ else{
 
     <!-- Post Slider -->
     <div class="post-slider">
-      <h1 class="slider-title">Recent Posts</h1>
+    <h1 class="slider-title"><?php echo $postsTitle ?></h1>
       <i class="fas fa-chevron-left prev"></i>
       <i class="fas fa-chevron-right next"></i>
 
@@ -82,13 +83,10 @@ else{
 
 By her brother's graveside, Liesel's life is changed when she picks up a single object, partially hidden in the snow. 
 
-<span id="dots">....</span> 
-<span id="more">
 It is The Gravedigger's Handbook, left behind there by accident, and it is her first act of book thievery. 
 
-</span>
         </p>
-        <p  onclick="myFunction()" class="btn read-more">Read More</p>
+        <a href="bookThief.php" class="btn read-more">Read More</a> 
       </div>
     </div>
 
@@ -147,7 +145,7 @@ It is The Gravedigger's Handbook, left behind there by accident, and it is her f
           <h2 class="section-title">Genres</h2>
           <ul>
           <?php foreach ($genres as $key => $genre): ?>
-              <li><a href="<?php echo ROOT_URL . '/index.php?t_id=' . $genre['id'] . '&name=' . $genre['name'] ?>"><?php echo $genre['name']; ?></a></li>
+              <li><a href="<?php echo ROOT_URL . '/genre.php?t_id=' . $genre['id'] . '&name=' . $genre['name'] ?>"><?php echo $genre['name']; ?></a></li>
             <?php endforeach; ?>
           </ul>
         </div>

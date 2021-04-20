@@ -1,4 +1,8 @@
-
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+?>
 <!-- the head section -->
 <head>
 <title>My PHP CRUD App</title>
@@ -26,27 +30,32 @@
 <header>
 <div class="nav-container">
     <nav class="navbar">
-       
-       <a href="../../index.php">
         <h1 id="navbar-logo">Book Kingdom</h1>
-    </a>
+            <div class = "menu-toggle"  id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-       
-        <ul class="nav">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user"></i>
-                        Temi Owolabi
-                        <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-                    </a>
-                    <ul>
-                    <button class="nav-links nav-links-btn" type="submit" name="submit">Logout</button>
-                    </ul>
-                </li>
-            </ul>
+            <ul class="nav-menu">
+        <?php
+            if (isset($_SESSION['username'])) {
+                echo '
+                    <li><a href="../index.php" class="nav-links">Home</a></li>
+                    <li><a href="../community.php" class="nav-links">Community</a></li>
+                    <li><a href="../logout.php" class="nav-links nav-links-btn">Logout</a></li>
+                ';
+            } 
+        ?>
+                <li class="nav-links">
+                            <i class="fa fa-user"></i>
+                    <?php echo $_SESSION['username']; ?></li>
+    </ul>
+
+
+
     </nav>
 </div>
 </header>
 
 </body>
-

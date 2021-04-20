@@ -1,5 +1,6 @@
 <?php include("../path.php"); ?>
-<?php include(ROOT_PATH . "/controllers/posts.php"); 
+<?php include("../includes/adminHeader.php"); 
+
 $posts = getPosts(); 
 adminOnly();
 ?>
@@ -29,7 +30,7 @@ adminOnly();
 
     <body>
         
-    <?php include(ROOT_PATH . "/includes/adminHeader.php"); ?>
+    
 
         <!-- Admin Page Wrapper -->
         <div class="admin-wrapper">

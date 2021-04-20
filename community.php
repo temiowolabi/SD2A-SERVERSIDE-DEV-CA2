@@ -51,7 +51,7 @@ $posts = getPosts();
           <i class="far fa-user"> Posted By: <?php echo $post['username']; ?></i>
           <p><?php echo html_entity_decode(substr($post['body'], 0, 300) . '...'); ?></p>
         <br>
-        <a href="post.php?id=<?php echo $post['id']; ?>">Read More</a> 
+        <a href="post.php?id=<?php echo $post['id']; ?> " class="btn read-more">Read More</a> 
         </div>
         </div>
       </div>
