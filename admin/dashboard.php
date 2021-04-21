@@ -1,7 +1,9 @@
 <?php include("../path.php"); ?>
 <?php include("../includes/adminHeader.php"); 
+include(ROOT_PATH . "/controllers/posts.php"); 
 
-$posts = getPosts(); 
+
+// $posts = getPosts(); 
 adminOnly();
 ?>
 <!DOCTYPE html>
@@ -47,7 +49,7 @@ adminOnly();
 
                     <?php include(ROOT_PATH . '/includes/messages.php'); ?>
                     <?php if (isset($_SESSION['id'])): ?>
-                        <h1> Welcome Back, <?php echo $_SESSION['username']; ?>! </h1>
+                        <h1> Hi <?php echo $_SESSION['username']; ?>! </h1>
                         <?php endif; ?>
                     
 

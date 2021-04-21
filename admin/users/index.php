@@ -1,4 +1,3 @@
-<?php include('../../includes/adminHeader.php') ?>
 <?php include("../../path.php"); ?>
 <?php include(ROOT_PATH . "/controllers/users.php"); 
 adminOnly();
@@ -29,6 +28,8 @@ adminOnly();
     </head>
 
     <body>
+
+    <?php include(ROOT_PATH . "/includes/adminHeader.php"); ?>
         
     <div class="admin-wrapper">
 

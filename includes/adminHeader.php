@@ -1,8 +1,6 @@
-<?php
-if(!isset($_SESSION)) {
+ <?php /*if(!isset($_SESSION)) {
     session_start();
-}
-?>
+} */?> 
 <!-- the head section -->
 <head>
 <title>My PHP CRUD App</title>
@@ -39,17 +37,19 @@ if(!isset($_SESSION)) {
 
             <ul class="nav-menu">
         <?php
-            if (isset($_SESSION['username'])) {
-                echo '
-                    <li><a href="../index.php" class="nav-links">Home</a></li>
-                    <li><a href="../community.php" class="nav-links">Community</a></li>
-                    <li><a href="../logout.php" class="nav-links nav-links-btn">Logout</a></li>
-                ';
-            } 
-        ?>
+            if (isset($_SESSION['username'])):  ?>
+ 
+                    <li><a href="<?php echo ROOT_URL . '/index.php'; ?>" class="nav-links">Home</a></li>
+                    <li><a href="<?php echo ROOT_URL . '/community.php'; ?>" class="nav-links">Community</a></li>
+                    <li><a href="<?php echo ROOT_URL . '/logout.php'; ?>" class="nav-links nav-links-btn">Logout</a></li>
+                
+            
+       
                 <li class="nav-links">
                             <i class="fa fa-user"></i>
                     <?php echo $_SESSION['username']; ?></li>
+
+                    <?php endif; ?>
     </ul>
 
 

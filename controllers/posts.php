@@ -159,7 +159,7 @@ if (isset($_POST['update-post'])) {
         $title = $_POST['title'];
         $body = $_POST['body'];
         $genre_id = $_POST['genre_id'];
-        $published = isset($_POST['published']) ? 1 : 0;
+        
     }
 
 }

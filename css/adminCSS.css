@@ -3,7 +3,7 @@
       -ms-flex: 2;
           flex: 2;
   height: 100%;
-  background: #234a57;
+  background: #595959;
 }
 
 .admin-wrapper .left-sidebar ul {
@@ -16,11 +16,11 @@
 .admin-wrapper .left-sidebar ul li a {
   padding: 18px;
   display: block;
-  border-bottom: 1px solid #004044;
+  border-bottom: 1px solid #1abc9c;
 }
 
 .admin-wrapper .left-sidebar ul li a:hover {
-  background: #004044;
+  background: #1abc9c;
 }
 
 * {

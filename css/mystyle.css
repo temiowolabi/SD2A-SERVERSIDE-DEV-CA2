@@ -1144,4 +1144,16 @@ textarea.input {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
+
+.news-image {
+  height: 15em;
+}
+
+.news {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 50px 100px;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
 /*# sourceMappingURL=mystyle.css.map */

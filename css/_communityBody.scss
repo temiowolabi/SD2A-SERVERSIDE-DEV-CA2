@@ -84,3 +84,25 @@
 	}
 
 }
+
+// .news {
+//     float: left;
+// }
+
+// .news section {
+//     width: 50%; float: left;
+// }
+
+.news-image{
+    height: 15em;
+}
+
+// .popularSection{
+//     margin-left: 50em;
+// }
+
+.news{
+    display: grid;
+    grid-gap: 50px 100px;
+    grid-template-columns: auto auto;
+}
