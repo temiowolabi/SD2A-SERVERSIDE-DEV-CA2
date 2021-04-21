@@ -41,7 +41,6 @@ adminOnly();
 <div class="admin-content">
                 <div class="button-group">
                     <a href="create.php" class="btn btn-big">Add Genre</a>
-                    <a href="index.php" class="btn btn-big">Manage Genre</a>
                 </div>
 
 

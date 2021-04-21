@@ -23,14 +23,14 @@ $posts = getPosts();
 
 <?php include('includes/header.php')?>
 
+
 <section class="news">
    
 <section class="latest-news-area" id="latest">
   <div class="container5">
     <div class="col-sm-12">
       <div class="section-title">
-        <div class="section_subtitle">Blog</div>
-        <h2>Recent <strong>Blogs</strong></h2>
+        <h1>Recent <strong>Blogs</strong></h1>
       </div>
     </div>
   </div>
@@ -62,50 +62,59 @@ $posts = getPosts();
 </section>
 
 <section class="popularSection">
+<div class="col-sm-12">
+<div class="section-title2">
   <h1>Popular Right Now!</h1>
-  <a href="https://www.easons.com/concrete-rose-angie-thomas-9781406384444"><img src="images/rose.jpg" alt="" class="news-image"></a>
-  <a href="https://www.easons.com/aftershocks-nadia-owusu-9781529342871"><img src="images/shock.jpg" alt="" class="news-image"></a>
-  <a href="https://www.easons.com/open-water-caleb-azumah-nelson-9780241448779"><img src="images/water.jpg" alt="" class="news-image"></a>
+  </div>
+  </div>
+  <div class="card card1">
+    <h5>Concrete Rose</h5>
 
-
-   <!-- Page Wrapper -->
-   <div class="page-wrapper">
-
-
-<!-- Content -->
-<div class="content clearfix">
-
-  <div class="sidebar">
-
-    <!-- <div class="section search">
-      <h2 class="section-title">Search</h2>
-      <form action="index.php" method="post">
-        <input type="text" name="search-term" class="text-input" placeholder="Search...">
-      </form>
-    </div> -->
-
-
-    <div class="section topics">
-      <h2 class="section-title">Genres</h2>
-      <ul>
-      <?php foreach ($genres as $key => $genre): ?>
-          <li><a href="<?php echo ROOT_URL . '/genre.php?t_id=' . $genre['id'] . '&name=' . $genre['name'] ?>"><?php echo $genre['name']; ?></a></li>
-        <?php endforeach; ?>
-      </ul>
     </div>
 
-  </div>
+    <div class="card card2">
+    <h5>Aftershocks</h5>
 
-</div>
-<!-- // Content -->
+    </div>
 
+    <div class="card card3">
+    <h5>Open Water</h5>
 
-</div>
-<!-- // Page Wrapper -->
+    </div>
+
+    <div class="card card4">
+    <h5>The Other Black Girl</h5>
+
+    </div>
+
+    <div class="card card5">
+    <h5>Libertie: A Novel</h5>
+
+    </div>
+    
+    <div class="card card6">
+    <h5>This Close to Okay: A Novel</h5>
+
+    </div>
+
+    <div class="card card7">
+    <h5>Luster</h5>
+
+    </div>
+
+    <div class="card card8">
+    <h5>Hidden Valley Road</h5>
+
+    </div>
+
+                    <a href="addPost.php">
+                        <button class="btn read-more" type="button">Add Post</button>
+                    </a>
+        
 </section>
 
 
 </section>
-            
+      
 
 <?php include('includes/footer.php')?>

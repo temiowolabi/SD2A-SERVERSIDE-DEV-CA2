@@ -28,7 +28,7 @@
 <header>
 <div class="nav-container">
     <nav class="navbar">
-        <h1 id="navbar-logo">Book Kingdom</h1>
+        <h1 id="myLogo">Book Kingdom</h1>
             <div class = "menu-toggle"  id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>

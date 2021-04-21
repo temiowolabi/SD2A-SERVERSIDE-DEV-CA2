@@ -12,7 +12,7 @@ body {
 	min-height: 100%;
 	a {
 		&:hover {
-			color: #006669;
+			color: #BF5F56;
 		}
 	}
 }
@@ -47,12 +47,12 @@ body {
 				position: absolute;
 				bottom: 10px;
 				right: 10px;
-				border: 1px solid #006669;
+				border: 1px solid #BF5F56;
 				background: transparent;
 				border-radius: 0px;
-				color: #006669 !important;
+				color: #BF5F56 !important;
 				&:hover {
-					background: #006669;
+					background: #BF5F56;
 					color: white !important;
 					transition: .25s;
 				}

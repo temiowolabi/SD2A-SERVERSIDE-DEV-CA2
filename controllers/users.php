@@ -43,7 +43,7 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
         if (isset($_POST['admin'])) {
             $_POST['admin'] = 1;
             $user_id = create($table, $_POST);
-            $_SESSION['message'] = 'Admin user created';
+            $_SESSION['message'] = 'User created';
             $_SESSION['type'] = 'success';
             header('location: ' . ROOT_URL . '/admin/users/index.php'); 
             exit();
@@ -64,7 +64,7 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
 
 if (isset($_POST['update-user'])) {
     adminOnly();
-    $errors = validateUser($_POST);
+    $errors = validateUserUpdate($_POST);
 
     if (count($errors) === 0) {
         $id = $_POST['id'];
@@ -73,7 +73,7 @@ if (isset($_POST['update-user'])) {
         
         $_POST['admin'] = isset($_POST['admin']) ? 1 : 0;
         $count = update($table, $id, $_POST);
-        $_SESSION['message'] = 'Admin user created';
+        $_SESSION['message'] = 'User Updated';
         $_SESSION['type'] = 'success';
         header('location: ' . ROOT_URL . '/admin/users/index.php'); 
         exit();
@@ -118,7 +118,7 @@ if (isset($_POST['login-btn'])) {
 if (isset($_GET['delete_id'])) {
     adminOnly();
     $count = delete($table, $_GET['delete_id']);
-    $_SESSION['message'] = 'Admin user deleted';
+    $_SESSION['message'] = 'User deleted';
     $_SESSION['type'] = 'success';
     header('location: ' . ROOT_URL . '/admin/users/index.php'); 
     exit();

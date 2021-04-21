@@ -1,0 +1,12 @@
+@font-face{
+    font-family:newFont;
+    src:url(../fonts/newFont.ttf)
+}
+
+#myLogo{
+    font-family: newFont;
+    font-size: 2em;
+    justify-self: start;
+	margin-left: 20px;
+    color: #BF5F56;
+}

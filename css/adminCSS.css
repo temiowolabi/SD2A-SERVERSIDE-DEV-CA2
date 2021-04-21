@@ -16,11 +16,11 @@
 .admin-wrapper .left-sidebar ul li a {
   padding: 18px;
   display: block;
-  border-bottom: 1px solid #1abc9c;
+  border-bottom: 1px solid #BF5F56;
 }
 
 .admin-wrapper .left-sidebar ul li a:hover {
-  background: #1abc9c;
+  background: #BF5F56;
 }
 
 * {
@@ -114,7 +114,7 @@ a {
 
 .btn {
   padding: .5rem 1rem;
-  background: #006669;
+  background: #BF5F56;
   color: white;
   border: 1px solid transparent;
   border-radius: .25rem;
@@ -123,7 +123,7 @@ a {
 
 .btn:hover {
   color: white !important;
-  background: #005255;
+  background: #BF5F56;
 }
 
 .btn-big {
@@ -229,7 +229,7 @@ form div {
 }
 
 #navbar-logo {
-  color: #1abc9c;
+  color: #BF5F56;
   -ms-grid-column-align: start;
       justify-self: start;
   margin-left: 20px;
@@ -254,13 +254,13 @@ form div {
 }
 
 .nav-links:hover {
-  color: #1abc9c;
+  color: #BF5F56;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
 
 .nav-links-btn {
-  background-color: #1abc9c;
+  background-color: #BF5F56;
   padding: 6px 16px;
   border-radius: 4px;
 }
@@ -270,7 +270,7 @@ form div {
   color: white;
   padding: 5px 15px;
   border-radius: 4px;
-  border: solid 1px #1abc9c;
+  border: solid 1px #BF5F56;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
@@ -293,7 +293,7 @@ form div {
     display: grid;
     -ms-grid-columns: auto;
         grid-template-columns: auto;
-    background: #1abc9c;
+    background: #BF5F56;
     margin: 0;
     width: 100%;
     position: absolute;
@@ -305,7 +305,7 @@ form div {
     margin-left: 20px;
   }
   .nav-menu.active {
-    background: #1abc9c;
+    background: #BF5F56;
     left: 0;
     opacity: 1;
     -webkit-transition: all 0.5s ease;
@@ -319,7 +319,7 @@ form div {
   }
   .nav-links:hover {
     background-color: white;
-    color: #1abc9c;
+    color: #BF5F56;
     -webkit-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
   }
@@ -330,7 +330,7 @@ form div {
     border: none;
     padding: 0;
     border-radius: 0;
-    background-color: #1abc9c;
+    background-color: #BF5F56;
     color: white;
     -webkit-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
@@ -339,7 +339,7 @@ form div {
     border: none;
     padding: 0;
     border-radius: 0;
-    background-color: #1abc9c;
+    background-color: #BF5F56;
     color: white;
     -webkit-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
@@ -369,5 +369,19 @@ form div {
     -webkit-transform: translate(-8px) rotate(-45deg);
             transform: translate(-8px) rotate(-45deg);
   }
+}
+
+@font-face {
+  font-family: newFont;
+  src: url(../fonts/newFont.ttf);
+}
+
+#myLogo {
+  font-family: newFont;
+  font-size: 2em;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  margin-left: 20px;
+  color: #BF5F56;
 }
 /*# sourceMappingURL=adminCSS.css.map */

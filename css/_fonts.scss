@@ -11,3 +11,29 @@ h2 {
 h1, h2 {
     color: #333;
 }
+
+h5{
+    color: white;
+    text-shadow: 0 0 5px #999;
+}
+
+@font-face{
+    font-family:newFont;
+    src:url(../fonts/newFont.ttf)
+}
+
+#myLogo{
+    font-family: newFont;
+    font-size: 2em;
+    justify-self: start;
+	margin-left: 20px;
+    color: #BF5F56;
+}
+
+.text-center{
+    color: #aa7d4f;
+}
+
+.display-3{
+    color: #aa7d4f;
+}
