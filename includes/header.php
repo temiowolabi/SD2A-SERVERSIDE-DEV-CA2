@@ -34,30 +34,27 @@
             </div>
 
             <ul class="nav-menu">
-            <?php if(isset($_SESSION['admin'])): ?>
-              <li class="nav-links"><a href="<?php echo ROOT_URL . '/admin/dashboard.php' ?>">Dashboard</a></li>
+
+            <li><a href="index.php" class="nav-links">Home</a></li>
+            <li><a href="community.php" class="nav-links">Community</a></li>
+
+            <?php if (isset($_SESSION['id'])): ?>
+
+            <?php if($_SESSION['admin']): ?>
+            <li class="nav-links"><a href="<?php echo ROOT_URL . '/admin/dashboard.php' ?>">Dashboard</a></li>
             <?php endif; ?>
-        <?php
-            if (isset($_SESSION['username'])) {
-                echo '
-                    <li><a href="index.php" class="nav-links">Home</a></li>
-                    <li><a href="community.php" class="nav-links">Community</a></li>
-                    <li><a href="logout.php" class="nav-links nav-links-btn">Logout</a></li>
-                ';
-            } else {
-                echo '
-                <li><a href="index.php" class="nav-links">Home</a></li>
-                <li><a href="community.php" class="nav-links">Community</a></li>
+
+            <li class="nav-links"> <i class="fa fa-user"></i> <?php echo $_SESSION['username']; ?></li>
+            <li><a href="logout.php" class="nav-links nav-links-btn">Logout</a></li>
+            <?php else: ?>
                 <li><a href="contact.php" class="nav-links">Contact</a></li>
                 <li><a href="login.php" class="nav-links nav-links-btn">Login</a></li>
                 <li><a href="register.php" class="nav-links nav-links-btn">Sign Up</a></li>
-                ';
-            }
-        ?>
-  
-  <?php if(isset($_SESSION['username'])): ?>
-                <li class="nav-links"> <i class="fa fa-user"></i> <?php echo $_SESSION['username']; ?></li>
                 <?php endif; ?>
+
+
+
+                
     </ul>
 
 
